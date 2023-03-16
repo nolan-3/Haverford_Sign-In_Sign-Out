@@ -7,6 +7,8 @@ import datetime
 from password import password
 from login import login_required
 from flask_session import Session
+from datetime import datetime
+import json
 
 
 app = Flask(__name__, static_url_path='', static_folder='static',)
@@ -29,7 +31,7 @@ class RegistrationManager():
     def __init__(self):
 
         # Always refresh on startup
-        self.refreshStudents()
+        self.read()
 
         # Setup recurring events to send mail, and refresh the student list
         if self.isOpen():
@@ -73,20 +75,37 @@ class RegistrationManager():
     # Get the names of all currently unregistered students
     ## PROBLEM ##############################TODO#######################################################
     def unregisteredNames(self):
-        return [name for name in self.students if self.students[name].signedIn == False]
+        return [name for name in self.data if self.data[name].signedIn == False]
     
 
     # If the program just switched from open -> close or vice versa perform open/closing tasks
     def checkChange(self):
         if self.awaiting == "open":
             if self.isOpen():
-                self.refreshStudents()
+                self.read()
                 self.awaiting = "close"
 
         elif self.awaiting == "close":
             if not self.isOpen():
                 self.sendMail()
                 self.awaiting = "open"
+
+    def read(self):
+        filename = datetime.now().strftime("%Y-%m-%d.json")
+        try:
+            with open(filename, "r") as file:
+                self.data = json.loads(file.read())
+
+        except:
+            self.refreshStudents()
+            self.write()
+
+
+    def write(self):
+        filename = datetime.now().strftime("%Y-%m-%d.json")
+
+        with open(filename,"w") as file:
+            json.dump(self.data, file)
 
 
     # Actions
@@ -95,26 +114,30 @@ class RegistrationManager():
     def refreshStudents(self):
         print("Refreshing student list.")
         self.freePeriod = getFreePeriod()
-        self.students = getStudents(self.freePeriod)
+        self.data = getStudents(self.freePeriod)
 
     # Send mail containing the list of unregistered students
     def sendMail(self):
         print("Sending mail.")
-        send(self.students, self.unregisteredNames())
+        send(self.data, self.unregisteredNames())
 
     # Attempt to register a student name, returns false if there's an error
-    def register(self, student):
+    def register(self, student):        
         if not self.isOpen():
             return "Error: Registration is not open"
 
-        if student not in self.students:
+        self.read()
+
+        if student not in self.data:
             return "Error: Student not found"
 
-        if self.students[student].signedIn:
+        if self.data[student].signedIn:
             return "Warning: Student already signed in"
 
-        self.students[student].signedIn = True
+        self.data[student].signedIn = True
+        self.write()
         return "Ok"
+
 
     def isWednesday(self):
         dayOfWeek = datetime.datetime.now(TIMEZONE).strftime("%A")

@@ -7,11 +7,12 @@ from password import p
 from getStudents import getStudents
 # given a list of students, sends that list to a specified email address.
 
-def send(students,unregisteredNames):
+def send(students):
     dayOfWeek = time.strftime("%A")
     #if dayOfWeek == "Saturday" or dayOfWeek == "Sunday":
         #return
     #else:
+    unregisteredNames = [name for name in students if students[name].signedIn == False]
     sendAll(students,unregisteredNames)
     sendGrades(students,unregisteredNames)
     sendStudents(students,unregisteredNames)
