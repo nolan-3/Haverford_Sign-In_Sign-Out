@@ -9,7 +9,7 @@ import time
 #     data = json.loads(file.read())
 #     send(data)
 print("INSTANT!")
-time.sleep(100)
-print("AFTER 100 SECONDS!")
+time.sleep(1800)
+print("AFTER 1800 SECONDS!")
 
 
