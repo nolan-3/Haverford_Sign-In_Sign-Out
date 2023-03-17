@@ -1,12 +1,9 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect
 from getStudents import getStudents
 from pytz import timezone
 from getFreePeriod import getFreePeriod
 from send import send
 import datetime
-from password import password
-#from login import login_required
-from flask_session import Session
 import json
 
 
@@ -18,10 +15,6 @@ TIMEZONE = timezone("America/New_York")
 OPEN_TIME = datetime.time(7, 0)
 CLOSE_TIME = datetime.time(9, 46)
 
-# Configure session to use filesystem (instead of signed cookies)
-app.config["SESSION_PERMANENT"] = False
-app.config["SESSION_TYPE"] = "filesystem"
-Session(app)
 
 # Manage the school schedule, and keep track of registered students
 class RegistrationManager():
@@ -32,34 +25,12 @@ class RegistrationManager():
         # Always refresh on startup
         self.read()
 
-        # Setup recurring events to send mail, and refresh the student list
-        # # if self.isOpen():
-        # #     self.awaiting = "close"
-        # #     #self.awaitClose()
-        # # else:
-        # #     #self.awaitOpen()
-        # #     self.awaiting = "open"
-        # # print("constructor runs!")
     # Destructor
     def __del__(self):
         # Shut down the recurring events when finished
         #self.cron.shutdown()
         None
 
-
-    # Require a login to prevent outside users
-    # # loggedIn = False
-    #set initial user id number
-    # # id = 0
-
-    # # def checkLogin(self, guess):
-    # #     if guess == password:
-    # #         self.loggedIn = True
-    # #         return True
-    # #     else:
-    # #         return False
-    # Properties
-    # =========================
     # Check whether registration is currently open
     def isOpen(self):
         timeNow = datetime.datetime.now(TIMEZONE).time()
@@ -72,22 +43,9 @@ class RegistrationManager():
 
 
     # Get the names of all currently unregistered students
-    ## PROBLEM ##############################TODO#######################################################
     def unregisteredNames(self):
         return [name for name in self.data if self.data[name].signedIn == False]
     
-
-    # If the program just switched from open -> close or vice versa perform open/closing tasks
-    # # def checkChange(self):
-    # #     if self.awaiting == "open":
-    # #         if self.isOpen():
-    # #             self.read()
-    # #             self.awaiting = "close"
-
-    # #     elif self.awaiting == "close":
-    # #         if not self.isOpen():
-    # #             self.sendMail()
-    # #             self.awaiting = "open"
 
     def read(self):
         filename = datetime.datetime.now().strftime("%Y-%m-%d.json")
@@ -146,33 +104,8 @@ class RegistrationManager():
 registration = RegistrationManager()
 
 
-# # @app.route('/login', methods=["GET","POST"])
-# # def login():
-# #     session.clear()
-
-# #     if request.method == "GET":
-# #         return render_template("login.html")
-
-# #     elif request.method == "POST":
-# #         guess = request.form.get("guess")
-# #         if registration.checkLogin(guess):
-# #             session["user_id"] = registration.id
-# #             registration.id += 1
-# #             print("new user:")
-# #             print(session["user_id"])
-# #             return redirect("/")
-# #         else:
-# #             return render_template("login.html")
-
-
-
-
 @app.route('/', methods=["GET", "POST"])
-# # @login_required
 def home():
-    # # registration.checkChange()
-    # # if not registration.loggedIn:
-    # #     return redirect("/login")
 
     # If this is a form submission, attempt to register the student
     if request.method == "POST":
