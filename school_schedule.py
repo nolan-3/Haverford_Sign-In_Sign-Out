@@ -34,40 +34,40 @@ CLOSE_TIME = time(9, 45)
 WEDNESDAY_CLOSE_TIME = time(10, 15)
 
 
-def registration_open(query=datetime.now()):
+def registration_open(timestamp=datetime.now()):
     """Check whether registration is open at a given datetime."""
-    logging.info(f"Checking registration at {query}.")
-    _validate_datetime(query)
+    logging.info(f"Checking registration at {timestamp}.")
+    _validate_datetime(timestamp)
 
     # Registration is closed on holidays
-    if _is_holiday(query): 
+    if _is_holiday(timestamp): 
         return False
 
     # Wednesday has a separate schedule
-    if query.strftime("%A") == "Wednesday":
-        return (OPEN_TIME <= query.time()) and (query.time() <= WEDNESDAY_CLOSE_TIME)
+    if timestamp.strftime("%A") == "Wednesday":
+        return (OPEN_TIME <= timestamp.time()) and (timestamp.time() <= WEDNESDAY_CLOSE_TIME)
     
-    return (OPEN_TIME <= query.time()) and (query.time() <= CLOSE_TIME)
+    return (OPEN_TIME <= timestamp.time()) and (timestamp.time() <= CLOSE_TIME)
 
 
-def free_period(query=datetime.now()):
+def free_period(timestamp=datetime.now()):
     """Determine the element of FREE_PATTERN corresponding to the given day."""
-    logging.info(f"Checking free period for {query}.")
+    logging.info(f"Checking free period for {timestamp}.")
     # Free periods rotate according to FREE_PATTERN, but only on school days
     school_days = np.busday_count(
-        FIRST_DAY.strftime("%Y-%m-%d"), query.strftime("%Y-%m-%d"), holidays=HOLIDAYS)
+        FIRST_DAY.strftime("%Y-%m-%d"), timestamp.strftime("%Y-%m-%d"), holidays=HOLIDAYS)
 
     return FREE_PATTERN[school_days % 7]
 
 
-def _validate_datetime(query):
+def _validate_datetime(timestamp):
     """Print a warning if the datetime is outside of the expected range."""
-    if query < VALID_START or query > VALID_END:
+    if timestamp < VALID_START or timestamp > VALID_END:
         logging.warning(
-            f"The given datetime '{query}' is outside the valid"
+            f"The given datetime '{timestamp}' is outside the valid"
             f" range ({VALID_START} to {VALID_END}), this may lead to unexpected behaviour.")
 
-def _is_holiday(query):
+def _is_holiday(timestamp):
     """Check whether a given date is a holiday"""
-    _validate_datetime(query)
-    return not np.is_busday(query.strftime("%Y-%m-%d"), holidays=HOLIDAYS)
+    _validate_datetime(timestamp)
+    return not np.is_busday(timestamp.strftime("%Y-%m-%d"), holidays=HOLIDAYS)
