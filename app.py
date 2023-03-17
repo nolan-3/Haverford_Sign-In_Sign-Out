@@ -7,7 +7,6 @@ import datetime
 from password import password
 from login import login_required
 from flask_session import Session
-from datetime import datetime
 import json
 
 
@@ -91,7 +90,7 @@ class RegistrationManager():
                 self.awaiting = "open"
 
     def read(self):
-        filename = datetime.now().strftime("%Y-%m-%d.json")
+        filename = datetime.datetime.now().strftime("%Y-%m-%d.json")
         try:
             with open(filename, "r") as file:
                 self.data = json.loads(file.read())
@@ -102,7 +101,8 @@ class RegistrationManager():
 
 
     def write(self):
-        filename = datetime.now().strftime("%Y-%m-%d.json")
+        print("write is called")
+        filename = datetime.datetime.now().strftime("%Y-%m-%d.json")
 
         with open(filename,"w") as file:
             json.dump(self.data, file)

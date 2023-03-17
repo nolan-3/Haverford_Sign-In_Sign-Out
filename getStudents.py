@@ -364,6 +364,8 @@ YU031,"Yu, Owen ( Owen )",VI,G,owenyu@haverford.org"""
             name = row[nameIndex]
             grade = row[gradeIndex]
             email = row[emailIndex]
-            students[name] = Student(grade,email)
+
+            #students[name] = Student(grade,email)
+            students[name] = {"signedIn": True, "grade": grade, "email": email,}
 
     return students
