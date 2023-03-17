@@ -44,10 +44,11 @@ class RegistrationManager():
 
     # Get the names of all currently unregistered students
     def unregisteredNames(self):
-        return [name for name in self.data if self.data[name].signedIn == False]
+        return [name for name in self.data if self.data[name]["signedIn"] == False]
     
 
     def read(self):
+        print("READ is called")
         filename = datetime.datetime.now().strftime("%Y-%m-%d.json")
         try:
             with open(filename, "r") as file:
@@ -59,7 +60,7 @@ class RegistrationManager():
 
 
     def write(self):
-        print("write is called")
+        print("WRITE is called")
         filename = datetime.datetime.now().strftime("%Y-%m-%d.json")
 
         with open(filename,"w") as file:
@@ -89,10 +90,10 @@ class RegistrationManager():
         if student not in self.data:
             return "Error: Student not found"
 
-        if self.data[student].signedIn:
+        if self.data[student]["signedIn"]:
             return "Warning: Student already signed in"
 
-        self.data[student].signedIn = True
+        self.data[student]["signedIn"] = True
         self.write()
         return "Ok"
 
