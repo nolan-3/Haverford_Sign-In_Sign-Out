@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect
 from getStudents import getStudents
 from pytz import timezone
 from getFreePeriod import getFreePeriod
-from send import send
 import datetime
 import json
 
@@ -13,7 +12,7 @@ app = Flask(__name__, static_url_path='', static_folder='static',)
 TIMEZONE = timezone("America/New_York")
 
 OPEN_TIME = datetime.time(7, 0)
-CLOSE_TIME = datetime.time(9, 46)
+CLOSE_TIME = datetime.time(23, 46)
 
 
 # Manage the school schedule, and keep track of registered students
@@ -27,8 +26,6 @@ class RegistrationManager():
 
     # Destructor
     def __del__(self):
-        # Shut down the recurring events when finished
-        #self.cron.shutdown()
         None
 
     # Check whether registration is currently open
@@ -41,11 +38,9 @@ class RegistrationManager():
         else:
             return (OPEN_TIME <= timeNow) and (timeNow <= CLOSE_TIME)
 
-
-    # Get the names of all currently unregistered students
+    # Get the names of all currently unregistered students 
     def unregisteredNames(self):
         return [name for name in self.data if self.data[name]["signedIn"] == False]
-    
 
     def read(self):
         filename = datetime.datetime.now().strftime("%Y-%m-%d.json")
@@ -57,13 +52,11 @@ class RegistrationManager():
             self.refreshStudents()
             self.write()
 
-
     def write(self):
         filename = datetime.datetime.now().strftime("%Y-%m-%d.json")
 
-        with open(filename,"w") as file:
+        with open(filename, "w") as file:
             json.dump(self.data, file)
-
 
     # Actions
     # =========================
@@ -73,13 +66,8 @@ class RegistrationManager():
         self.freePeriod = getFreePeriod()
         self.data = getStudents(self.freePeriod)
 
-    # Send mail containing the list of unregistered students
-    def sendMail(self):
-        print("Sending mail.")
-        send(self.data, self.unregisteredNames())
-
     # Attempt to register a student name, returns false if there's an error
-    def register(self, student):        
+    def register(self, student):
         if not self.isOpen():
             return "Error: Registration is not open"
 
@@ -95,10 +83,10 @@ class RegistrationManager():
         self.write()
         return "Ok"
 
-
     def isWednesday(self):
         dayOfWeek = datetime.datetime.now(TIMEZONE).strftime("%A")
-        return(dayOfWeek == "Wednesday")
+        return (dayOfWeek == "Wednesday")
+
 
 registration = RegistrationManager()
 
@@ -110,8 +98,8 @@ def home():
     if request.method == "POST":
         student = request.form["student"]
         print(f"Registering '{student}': {registration.register(student)}")
-    # if the time is between 7:00 and 9:30 return active page, if time is outside 7:00 - 9:30 return the inactive page
-    # store the students who login between 7:00 and 9:30 and send an email at 9:30 with the list
+    # if the time is between 7:00 and 9:30 return active page, if time is outside 7:00 - 9:45 return the inactive page
+    # store the students who login between 7:00 and 9:30, scheduled script sends an email at 9:46 with the list
     if registration.isOpen():
         return render_template("open.html", names=registration.unregisteredNames())
 
@@ -120,5 +108,3 @@ def home():
 
 if __name__ == '__main__':
     app.run(debug=False, port=8000)
-
-
