@@ -26,6 +26,8 @@ class RegistrationManager():
 
     # Destructor
     def __del__(self):
+        # Shut down the recurring events when finished
+        # self.cron.shutdown()
         None
 
     # Check whether registration is currently open
@@ -38,7 +40,8 @@ class RegistrationManager():
         else:
             return (OPEN_TIME <= timeNow) and (timeNow <= CLOSE_TIME)
 
-    # Get the names of all currently unregistered students 
+    # Get the names of all currently unregistered students
+
     def unregisteredNames(self):
         return [name for name in self.data if self.data[name]["signedIn"] == False]
 
@@ -60,11 +63,13 @@ class RegistrationManager():
 
     # Actions
     # =========================
+
     # Refresh the list of students for the current day
     def refreshStudents(self):
         print("Refreshing student list.")
         self.freePeriod = getFreePeriod()
         self.data = getStudents(self.freePeriod)
+
 
     # Attempt to register a student name, returns false if there's an error
     def register(self, student):
@@ -98,8 +103,8 @@ def home():
     if request.method == "POST":
         student = request.form["student"]
         print(f"Registering '{student}': {registration.register(student)}")
-    # if the time is between 7:00 and 9:30 return active page, if time is outside 7:00 - 9:45 return the inactive page
-    # store the students who login between 7:00 and 9:30, scheduled script sends an email at 9:46 with the list
+    # if the time is between 7:00 and 9:30 return active page, if time is outside 7:00 - 9:30 return the inactive page
+    # store the students who login between 7:00 and 9:30 and send an email at 9:30 with the list
     if registration.isOpen():
         return render_template("open.html", names=registration.unregisteredNames())
 
