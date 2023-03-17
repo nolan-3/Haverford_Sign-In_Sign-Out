@@ -48,7 +48,6 @@ class RegistrationManager():
     
 
     def read(self):
-        print("READ is called")
         filename = datetime.datetime.now().strftime("%Y-%m-%d.json")
         try:
             with open(filename, "r") as file:
@@ -60,7 +59,6 @@ class RegistrationManager():
 
 
     def write(self):
-        print("WRITE is called")
         filename = datetime.datetime.now().strftime("%Y-%m-%d.json")
 
         with open(filename,"w") as file:
