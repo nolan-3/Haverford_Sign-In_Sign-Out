@@ -22,8 +22,8 @@ def sendAll(students,unregisteredNames):
     port = 465  # For SSL
     smtp_server = "smtp.gmail.com"
     sender_email = "haverfordsignin@gmail.com"  # Enter your address
-    #################################### CHANGE TO KOLADE
-    receiver_email = ["nolamccl@haverford.org","agreattofutaxpayer@gmail.com"]  # Enter receiver address
+    # Kolade
+    receiver_email = ["nolamccl@haverford.org","haverfordsignin@gmail.com"]  # Enter receiver address
     password = p
 
     content = 'Name, Grade \n'
@@ -55,10 +55,10 @@ def sendGrades(students,unregisteredNames):
             dean = "nolamccl@haverford.org"
         elif i == 1:
             target = "IV"
-            dean = "nolamccl@haverford.org"
+            dean = "sean@pennrealestategroup.com"
         elif i == 2:
             target = "V"
-            dean = "nolamccl@haverford.org"
+            dean = "donna@penngroup.net"
         elif i == 3:
             target = "VI"
             dean = "nolamccl@haverford.org"
