@@ -26,14 +26,15 @@ HOLIDAYS = ['2022-09-23', '2022-09-26', '2022-10-05', '2022-10-21', '2022-11-14'
             '2023-04-07', '2023-05-01', '2023-05-29']
 
 
-# Registration times
+# Registration times, soft closing e.g. close at 9:45 means it is open at 9:45:59
 OPEN_TIME = time(1, 0)
-CLOSE_TIME = time(19, 20)
+CLOSE_TIME = time(19, 32)
 WEDNESDAY_CLOSE_TIME = time(10, 16)
 
 
-def registration_open(timestamp=datetime.now(TIMEZONE)):
+def registration_open():
     """Check whether registration is open at a given datetime."""
+    timestamp=datetime.now(TIMEZONE)
     print(f"Checking registration at {timestamp}.")
     _validate_datetime(timestamp)
 
@@ -49,8 +50,9 @@ def registration_open(timestamp=datetime.now(TIMEZONE)):
     return (OPEN_TIME <= timestamp.time()) and (timestamp.time() <= CLOSE_TIME)
 
 
-def free_period(timestamp=datetime.now()):
+def free_period():
     """Determine the element of FREE_PATTERN corresponding to the given day."""
+    timestamp=datetime.now()
     print(f"Checking free period for {timestamp}.")
 
     # Free periods rotate according to FREE_PATTERN, but only on school days
