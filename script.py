@@ -9,7 +9,7 @@ dayOfWeek = time.strftime("%A")
 if dayOfWeek == "Wednesday":
     time.sleep(1800)
     print("Wednesday: Task Slept For 1800 Seconds")
-
+    
 
 filename = datetime.now().strftime("%Y-%m-%d.json")
 with open(filename, "r") as file:

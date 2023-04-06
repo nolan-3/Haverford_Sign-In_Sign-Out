@@ -26,9 +26,9 @@ HOLIDAYS = ['2022-09-23', '2022-09-26', '2022-10-05', '2022-10-21', '2022-11-14'
             '2023-04-07', '2023-05-01', '2023-05-29']
 
 
-# Registration times, soft closing e.g. close at 9:45 means it is open at 9:45:59
-OPEN_TIME = time(1, 0)
-CLOSE_TIME = time(19, 32)
+# Registration opening/closing times
+OPEN_TIME = time(7, 0)
+CLOSE_TIME = time(9, 46)
 WEDNESDAY_CLOSE_TIME = time(10, 16)
 
 

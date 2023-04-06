@@ -17,7 +17,8 @@ LOG_FORMAT = "%Y-%m-%d.json"
 #     """Read the list of all students, and construct a dictionary indexed by name."""
 
 
-def unregistered_names(date=datetime.now(), grades=["III", "IV", "V", "VI"]):
+def unregistered_names(grades=["III", "IV", "V", "VI"]):
+    date = datetime.now()
     """Return the names of unregistered students matching `grades` for a given date.
     Looks for student data in "logs/YYYY-MM-DD.json". If necessary, a new file will be created
     with students populated from the school schedule.
@@ -28,7 +29,8 @@ def unregistered_names(date=datetime.now(), grades=["III", "IV", "V", "VI"]):
     return [name for name, info in students.items() if info["grade"] in grades and not info["signedIn"]]
 
 
-def register(name, date=datetime.now()):
+def register(name):
+    date = datetime.now()
     """Mark a student as registered for a given date.
     Looks for student data in "logs/YYYY-MM-DD.json". If necessary, a new file will be created
     with students populated from the school schedule.
