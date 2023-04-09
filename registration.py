@@ -3,7 +3,6 @@ This module provides functions for working with a list of students
 and storing the results to disk.
 """
 
-from school_schedule import free_period
 import os
 import json
 from datetime import datetime
@@ -61,7 +60,7 @@ def _write_student_file(students, date):
 # handled by getStudents
 # def _initialize_students(date):
 #     """Initialize a list of students with free period on a given date."""
-#     free_students = {name : info for name, info in all_students().items() if info["free"] == free_period(date) }
+#     free_students = {name : info for name, info in all_students().items() if info["free"] == free_period() }
 #     return {name: {**info, "signedIn": False} for name, info in free_students.items()}
 
 
@@ -73,7 +72,7 @@ def _read_or_initialize_student_file(date):
     """
     if not os.path.exists(_filename(date)):
         print("creating daily file")
-        _write_student_file(getStudents(free_period(date)), date)
+        _write_student_file(getStudents(free_period()), date)
 
     with open(_filename(date), "r") as file:
         return json.load(file)
