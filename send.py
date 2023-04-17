@@ -52,15 +52,19 @@ def sendGrades(students,unregisteredNames):
     ################################### CHANGE TO FORM DEANS
         if i == 0:
             target = "III"
+            #      scloran@haverford.org
             dean = "nolamccl@haverford.org"
         elif i == 1:
             target = "IV"
+            #       jhart@haverford.org
             dean = "sean@pennrealestategroup.com"
         elif i == 2:
             target = "V"
+            #       tlengel@haverford.org
             dean = "donna@penngroup.net"
         elif i == 3:
             target = "VI"
+            #       bkenna@haverford.org
             dean = "nolamccl@haverford.org"
         
         port = 465  # For SSL

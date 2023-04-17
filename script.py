@@ -15,4 +15,4 @@ filename = datetime.now().strftime("%Y-%m-%d.json")
 with open(filename, "r") as file:
     data = json.loads(file.read())
     send(data)
-    print("Email Sent")
+    print("Emails Sent")
