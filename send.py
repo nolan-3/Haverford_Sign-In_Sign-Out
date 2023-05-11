@@ -57,15 +57,15 @@ def sendGrades(students,unregisteredNames):
         elif i == 1:
             target = "IV"
             #       jhart@haverford.org
-            dean = "sean@pennrealestategroup.com"
+            dean = "nolamccl@haverford.org"
         elif i == 2:
             target = "V"
             #       tlengel@haverford.org
-            dean = "donna@penngroup.net"
+            dean = "nolamccl@haverford.org"
         elif i == 3:
             target = "VI"
             #       bkenna@haverford.org
-            dean = "nolamccl@haverford.org"
+            dean = "bkenna@haverford.org"
         
         port = 465  # For SSL
         smtp_server = "smtp.gmail.com"
