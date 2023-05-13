@@ -65,7 +65,7 @@ def sendGrades(students,unregisteredNames):
         elif i == 3:
             target = "VI"
             #       bkenna@haverford.org
-            dean = "bkenna@haverford.org"
+            dean = "nolamccl@haverford.org"
         
         port = 465  # For SSL
         smtp_server = "smtp.gmail.com"
