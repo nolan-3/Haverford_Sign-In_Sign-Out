@@ -48,24 +48,22 @@ def sendAll(students,unregisteredNames):
                             to_addrs=receiver_email)
 
 def sendGrades(students,unregisteredNames):
-    for i in range(0,4):
+    # send 3 emails 1 to each form dean
+    for i in range(0,3):
     ################################### CHANGE TO FORM DEANS
         if i == 0:
             target = "III"
-            #      scloran@haverford.org
-            dean = "nolamccl@haverford.org"
+            dean = "scloran@haverford.org"
         elif i == 1:
             target = "IV"
-            #       jhart@haverford.org
-            dean = "nolamccl@haverford.org"
+            dean = "jhart@haverford.org"
         elif i == 2:
             target = "V"
-            #       tlengel@haverford.org
-            dean = "nolamccl@haverford.org"
+            dean = "tlengel@haverford.org"
+            # this shouldn't run because the seniors are gone doing senior projects
         elif i == 3:
             target = "VI"
-            #       bkenna@haverford.org
-            dean = "nolamccl@haverford.org"
+            dean = "bkenna@haverford.org"
         
         port = 465  # For SSL
         smtp_server = "smtp.gmail.com"

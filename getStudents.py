@@ -17,8 +17,6 @@ def getStudents(period):
 
     # CSV data as a multi-line string
     csv_data = """ID,name,grade,free,email
-    WANG022,"Wang, Evan ( Evan )",VI,A,evanwang@haverford.or
-    VOLL011,"Vollmer, George ( George )",VI,A,georvoll@haverford.org
     COOP051,"Cooper, Gavin ( Gavin )",IV,A,gavicoop@haverford.org
     GERG011,"Gergo, Peter ( Peter )",IV,A,petegerg@haverford.org
     BONA011,"Bonaparte, Jai ( Jai )",V,A,jaibona@haverford.org
@@ -40,36 +38,6 @@ def getStudents(period):
     SHAF011,"Shaffer, Reilly ( Reilly )",V,A,reilshaf@haverford.org
     TREX011,"Trexler, Noah ( Noah )",V,A,noahtrex@haverford.org
     ZHAN031,"Zhang, Max ( Max )",V,A,maxzhan@haverford.org
-    ACCH011,"Acchione, Joseph Lucio ( Lucio )",VI,A,joseacch@haverford.org
-    ASCH013,"Aschkenasy, Charles ( Charlie )",VI,A,charasch@haverford.org
-    ATKI031,"Atkinson, Louis ( Louie )",VI,A,louiatki@haverford.org
-    BODL011,"Bodle, Benjamin ( Ben )",VI,A,benjbodl@haverford.org
-    BRID011,"Briddell, Aidan ( Aidan )",VI,A,aidabrid@haverford.org
-    CHEN071,"Chen, Jingyuan ( Jingyuan )",VI,A,jingchen@haverford.org
-    COLL041,"Collier, Matthew ( Matthew )",VI,A,mattcoll@haverford.org
-    DEAN041,"Dean, Michael ( Michael )",VI,A,michdean@haverford.org
-    DOUG041,"Douglas, Cameron ( Cameron )",VI,A,camedoug@haverford.org
-    DUGE011,"Dugery, Sean ( Sean )",VI,A,seanduge@haverford.org
-    HARL011,"Harlamov, Ivan ( Ivan )",VI,A,ivanharl@haverford.org
-    HARR071,"Harris, Safiyy ( Papi )",VI,A,safiharr@haverford.org
-    HERD023,"Herd, John ( Johnny )",VI,A,johnherd@haverford.org
-    ISLA011,"Islam, Ali ( Ali )",VI,A,aliisla@haverford.org
-    KNOX021,"Knox, Derrick ( Chace )",VI,A,derrknox@haverford.org
-    LUTE011,"Luterman, Andrew ( Andrew )",VI,A,andrlute@haverford.org
-    MCCU041,"McCullough, Harrison ( Harrison )",VI,A,harrmccu@haverford.org
-    MIRI011,"Mirin, Nathan ( Nate )",VI,A,nathmiri@haverford.org
-    OBRI022,"O'Brien, Charles ( Charlie )",VI,A,charobri@haverford.org
-    PANT012,"Pante, Matthew ( Matt )",VI,A,mattpant@haverford.org
-    PARI021,"Pariano, Joseph ( Joe )",VI,A,josepari@haverford.org
-    PENN021,"Pennewill, Joseph ( Joey )",VI,A,josepenn@haverford.org
-    PLUM011,"Plumer-Butler, Jasir ( Jasir )",VI,A,jasiplum@haverford.org
-    PRES031,"Pressman, Brandon ( Cole )",VI,A,branpres@haverford.org
-    RASM011,"Rasmussen, Luke ( Luke )",VI,A,lukerasm@haverford.org
-    ROSE081,"Rosenberg, Charles ( Charlie )",VI,A,charrose@haverford.org
-    SEKU012,"Sekulic, Luka ( Luka )",VI,A,lukaseku@haverford.org
-    SHAH013,"Shah, Zachary ( Zachary )",VI,A,zachshah@haverford.org
-    STRA021,"Straub, Matthew ( Matthew )",VI,A,mattstra@haverford.org
-    TELL011,"Tellez, Nathaniel ( Nathaniel )",VI,A,nathtell@haverford.org
     NYE011,"Nye, Thomas ( Thomas )",III,B,thomnye@haverford.org
     GAFF021,"Gaffney, Thomas ( Mac )",IV,B,thomgaff@haverford.org
     GILL081,"Gillis, Sebastian ( Sebastian )",IV,B,sebagill@haverford.org
@@ -113,26 +81,6 @@ def getStudents(period):
     STAM022,"Stamps, Gavin ( Gavin )",V,B,gavistam@haverford.org
     VALE011,"Valentino, Anthony ( Anthony )",V,B,anthvale@haverford.org
     WINI013,"Winikur, Asa ( Asa )",V,B,asawini@haverford.org
-    ACCH011,"Acchione, Joseph Lucio ( Lucio )",VI,B,joseacch@haverford.org
-    ARIA012,"Arias, Joaquin ( Joaquin )",VI,B,joaqaria@haverford.org
-    CHEN071,"Chen, Jingyuan ( Jingyuan )",VI,B,jingchen@haverford.org
-    COLL041,"Collier, Matthew ( Matthew )",VI,B,mattcoll@haverford.org
-    CURT021,"Curtis, Dylan ( Dylan )",VI,B,dylacurt@haverford.org
-    DENM011,"Denmark, Yasir ( Yasir )",VI,B,yasidenm@haverford.org
-    DONN011,"Donnelly, Cole ( Cole )",VI,B,coledonn@haverford.org
-    FRAN021,"Franz, Matthew ( Matthew )",VI,B,mattfran@haverford.org
-    GETZ011,"Getz, Ryan ( Ryan )",VI,B,ryangetz@haverford.org
-    GHAN011,"Ghanem, Yonas ( Yonas )",VI,B,yonaghan@haverford.org
-    HARR071,"Harris, Safiyy ( Papi )",VI,B,safiharr@haverford.org
-    HERD012,"Herdler, Owen ( Owen )",VI,B,owenherd@haverford.org
-    KAUF011,"Kauffman, Joseph ( Joey )",VI,B,josekauf@haverford.org
-    KELL071,"Kelly, Colin ( Colin )",VI,B,colikell@haverford.org
-    KESZ012,"Keszeli, Nicholas ( Nicholas )",VI,B,nichkesz@haverford.org
-    NEK0011,"Nekoumand, Alexander ( Z )",VI,B,alexneko@haverford.org
-    POWE031,"Powell, Zachary ( Zach )",VI,B,zachpowe@haverford.org
-    SILV031,"Silvers, Willys ( Willys )",VI,B,willsilv@haverford.org
-    SULL012,"Sullivan, Jack ( Jack )",VI,B,jacksull@haverford.org
-    WANG022,"Wang, Evan ( Evan )",VI,B,evanwang@haverford.org
     BAKE032,"Baker, Chase ( Chase )",III,C,chasbake@haverford.org
     CHAK022,"Chakraborty, Ajay ( AJ )",III,C,ajaychak@haverford.org
     CLAR061,"Clarke, Rauden ( Rauden )",III,C,raudclar@haverford.org
@@ -158,19 +106,6 @@ def getStudents(period):
     RONO011,"Ronon, Gerald ( Tripp )",V,C,gerarono@haverford.org
     ROUS012,"Rouse, John ( John )",V,C,johnrous@haverford.org
     YOH022,"Yoh, Russell ( Russell )",V,C,russyoh@haverford.org
-    DOUG051,"Dougherty, Sean ( Sean )",VI,C,seandoug@haverford.org
-    ELDE011,"Elder, Zachary ( Zach )",VI,C,zachelde@haverford.org
-    KHAN032,"Khan, Ebaad ( Ebaad )",VI,C,ebaakhan@haverford.org
-    KIRW011,"Kirwan, Andrew ( Andrew )",VI,C,andrkirw@haverford.org
-    MARS021,"Marshall, Adam ( Adam )",VI,C,adammars@haverford.org
-    NESB012,"Nesbitt, Rory ( Rory )",VI,C,rorynesb@haverford.org
-    PANT012,"Pante, Matthew ( Matt )",VI,C,mattpant@haverford.org
-    PARA031,"Parayre, Roch ( Roch )",VI,C,rochpara@haverford.org
-    SELL012,"Sellari, Jacob ( Jacob )",VI,C,jacosell@haverford.org
-    SHEA031,"Shea, Aedan ( Aedan )",VI,C,aedashea@haverford.org
-    SHUC012,"Shuchman, Jaiden ( Jaiden )",VI,C,jaidshuc@haverford.org
-    SILV031,"Silvers, Willys ( Willys )",VI,C,willsilv@haverford.org
-    YU031,"Yu, Owen ( Owen )",VI,C,owenyu@haverford.org
     CARR051,"Carrasco, Andrew ( Drew )",III,D,andrcarr@haverford.org
     GREE141,"Greenberg, Brady ( Brady )",III,D,bradgree@haverford.org
     HOBA012,"Hoban, Matthew ( Matt )",III,D,matthoba@haverford.org
@@ -194,27 +129,6 @@ def getStudents(period):
     LONG041,"Long, Jackson ( Jack )",V,D,jacklong@haverford.org
     SCHW031,"Schwarting, Christopher ( Christopher )",V,D,chrischw@haverford.org
     WHIT111,"White, Michael ( Ian )",V,D,michwhit@haverford.org
-    ASCH013,"Aschkenasy, Charles ( Charlie )",VI,D,charasch@haverford.org
-    BEIF011,"Beifeld, William ( Billy )",VI,D,willbeif@haverford.org
-    BIRD012,"Birdsall, Nicholas ( Nicholas )",VI,D,nichbird@haverford.org
-    BURT032,"Burt, William ( Wills )",VI,D,willburt@haverford.org
-    DIRO011,"DiRocco, Ryan ( Ryan )",VI,D,ryandiro@haverford.org
-    DOUG041,"Douglas, Cameron ( Cameron )",VI,D,camedoug@haverford.org
-    FALK011,"Falk, James ( James )",VI,D,jamefalk@haverford.org
-    GETZ011,"Getz, Ryan ( Ryan )",VI,D,ryangetz@haverford.org
-    GLAD011,"Gladden, Alir ( Alir )",VI,D,alirglad@haverford.org
-    HANS061,"Hans, Joshua ( Josh )",VI,D,joshhans@haverford.org
-    KAO011,"Kao, Dylan ( Dylan )",VI,D,dylakao@haverford.org
-    NEK0011,"Nekoumand, Alexander ( Z )",VI,D,alexneko@haverford.org
-    RALL011,"Rall, Connor ( Connor )",VI,D,connrall@haverford.org
-    RANT012,"Rantanen, Grady ( Grady )",VI,D,gradrant@haverford.org
-    SARD012,"Sardesai, Arnav ( Arnav )",VI,D,arnasard@haverford.org
-    SAWH011,"Sawhney, Neil ( Neil )",VI,D,neilsawh@haverford.org
-    SHUC011,"Shuchman, Isaiah ( Isaiah )",VI,D,isaishuc@haverford.org
-    SULL012,"Sullivan, Jack ( Jack )",VI,D,jacksull@haverford.org
-    TANK011,"Tank, Megh ( Megh )",VI,D,meghtank@haverford.org
-    WIST011,"Astorga Wister, William ( Orion )",VI,D,willasto@haverford.org
-    WOOD012,"Wood, Ronan ( Ronan )",VI,D,ronawood@haverford.org
     MCCL053,"McClave, Jude ( Jude )",IV,E,judemccl@haverford.org
     BARN071,"Barnes-Pace, Michael ( Mick )",V,E,michbarn@haverford.org
     BONG011,"Bongiovanni, Joseph ( Quin )",V,E,josebong@haverford.org
@@ -226,29 +140,6 @@ def getStudents(period):
     VOGE011,"Vogel, Tanner ( Tanner )",V,E,tannvoge@haverford.org
     WALK062,"Walker, William ( William )",V,E,willwalk@haverford.org
     WU021,"Wu, Preston ( Preston )",V,E,preswu@haverford.org
-    BALA011,"Balachandran, Miles ( Miles )",VI,E,milebala@haverford.org
-    CAMP071,"Campbell, James ( Jac )",VI,E,jamecamp@haverford.org
-    CARR041,"Carrillo, Jonathan ( Jonathan )",VI,E,jonacarr@haverford.org
-    CHAN031,"Chan, Ethan ( Ethan )",VI,E,ethachan@haverford.org
-    CURT021,"Curtis, Dylan ( Dylan )",VI,E,dylacurt@haverford.org
-    DENM011,"Denmark, Yasir ( Yasir )",VI,E,yasidenm@haverford.org
-    DIRO011,"DiRocco, Ryan ( Ryan )",VI,E,ryandiro@haverford.org
-    DONN011,"Donnelly, Cole ( Cole )",VI,E,coledonn@haverford.org
-    DUNC011,"Dunckel, Peter ( Pete )",VI,E,petedunc@haverford.org
-    FALK011,"Falk, James ( James )",VI,E,jamefalk@haverford.org
-    FORD022,"Ford, Bryce ( Bryce )",VI,E,brycford@haverford.org
-    FRAN031,"Francis, Jamir ( Jamir )",VI,E,jamifran@haverford.org
-    HANS061,"Hans, Joshua ( Josh )",VI,E,joshhans@haverford.org
-    HERD012,"Herdler, Owen ( Owen )",VI,E,owenherd@haverford.org
-    KAO011,"Kao, Dylan ( Dylan )",VI,E,dylakao@haverford.org
-    LEAR012,"Leary, Brendan ( Brendan )",VI,E,brenlear@haverford.org
-    MARS021,"Marshall, Adam ( Adam )",VI,E,adammars@haverford.org
-    MIRI011,"Mirin, Nathan ( Nate )",VI,E,nathmiri@haverford.org
-    PARA031,"Parayre, Roch ( Roch )",VI,E,rochpara@haverford.org
-    PEND032,"Pendergast, Thomas ( Thomas )",VI,E,thompend@haverford.org
-    QUAT011,"Quatrani, Mark ( Mark )",VI,E,markquat@haverford.org
-    ROSE081,"Rosenberg, Charles ( Charlie )",VI,E,charrose@haverford.org
-    SUTE011,"Suter, John ( Jack )",VI,E,johnsute@haverford.org
     AGGA012,"Aggarwal, Arsh ( Arsh )",V,F,arshagga@haverford.org
     BELD011,"Belden, Daniel ( Daniel )",V,F,danibeld@haverford.org
     BRAD061,"Bradley, Andrew ( Andrew )",V,F,andrbrad@haverford.org
@@ -278,15 +169,6 @@ def getStudents(period):
     WOLI011,"Wolitarsky, James ( William )",V,F,jamewoli@haverford.org
     WYLI011,"Wylie, Michael ( Michael )",V,F,michwyli@haverford.org
     YOUN052,"Young, Banks ( Banks )",V,F,bankyoun@haverford.org
-    BROS011,"Brosko, William ( Billy )",VI,F,willbros@haverford.org
-    CARR041,"Carrillo, Jonathan ( Jonathan )",VI,F,jonacarr@haverford.org
-    HERR023,"Herrmann, Alex ( Alex )",VI,F,alexherr@haverford.org
-    KANG031,"Kang, Matthew ( Matthew )",VI,F,mattkang@haverford.org
-    LEAR012,"Leary, Brendan ( Brendan )",VI,F,brenlear@haverford.org
-    PENN013,"Pennington, Harvey ( Harvey )",VI,F,harvpenn@haverford.org
-    PLUM011,"Plumer-Butler, Jasir ( Jasir )",VI,F,jasiplum@haverford.org
-    QUAT011,"Quatrani, Mark ( Mark )",VI,F,markquat@haverford.org
-    ZELL022,"Zeller, Colin ( Colin )",VI,F,colizell@haverford.org
     CLOR023,"Cloran, Duke ( Duke )",IV,G,dukeclor@haverford.org
     DOMB011,"Dombar, Simon ( Simon )",IV,G,simodomb@haverford.org
     JONE072,"Jones, Preston ( Preston )",IV,G,presjone@haverford.org
@@ -309,47 +191,7 @@ def getStudents(period):
     ROSE072,"Rosenberger, Anthony ( A.J. )",V,G,anthrose@haverford.org
     SCAN011,"Scanlan, Connor ( Connor )",V,G,connscan@haverford.org
     STAL031,"Stallkamp, Brady ( Brady )",V,G,bradstal@haverford.org
-    WATS041,"Watson, Luke ( Luke )",V,G,lukewats@haverford.org
-    ATKI031,"Atkinson, Louis ( Louie )",VI,G,louiatki@haverford.org
-    BALA011,"Balachandran, Miles ( Miles )",VI,G,milebala@haverford.org
-    BIRD012,"Birdsall, Nicholas ( Nicholas )",VI,G,nichbird@haverford.org
-    BROS011,"Brosko, William ( Billy )",VI,G,willbros@haverford.org
-    BUSS011,"Busser, Thaddeus ( Teddy )",VI,G,thadbuss@haverford.org
-    CAES011,"Caesar, Julian ( Julian )",VI,G,julicaes@haverford.org
-    CALL031,"Callahan, Jeremy ( Jeremy )",VI,G,jerecall@haverford.org
-    CAMP071,"Campbell, James ( Jac )",VI,G,jamecamp@haverford.org
-    CASE023,"Case, Andrew ( Andrew )",VI,G,andrcase@haverford.org
-    CHEN071,"Chen, Jingyuan ( Jingyuan )",VI,G,jingchen@haverford.org
-    COOL012,"Cooleen, Brendan ( Brendan )",VI,G,brencool@haverford.org
-    CROW031,"Crowther, Jay ( Jay )",VI,G,jaycrow@haverford.org
-    DAVE032,"Davey, Ryan ( Ryan )",VI,G,ryandave@haverford.org
-    EVAN041,"Evans, Alphonso ( Alphonso )",VI,G,alphevan@haverford.org
-    FLIN022,"Flinn, Wells ( Wells )",VI,G,wellflin@haverford.org
-    FORD022,"Ford, Bryce ( Bryce )",VI,G,brycford@haverford.org
-    FRAN021,"Franz, Matthew ( Matthew )",VI,G,mattfran@haverford.org
-    GHAN011,"Ghanem, Yonas ( Yonas )",VI,G,yonaghan@haverford.org
-    GOWE012,"Gowen, Henry ( Henry )",VI,G,henrgowe@haverford.org
-    HEND041,"Henderson, Jason ( Jason )",VI,G,jasohend@haverford.org
-    KAUF011,"Kauffman, Joseph ( Joey )",VI,G,josekauf@haverford.org
-    KIM071,"Kim, Geonho ( Brian )",VI,G,geonkim@haverford.org
-    KIRW011,"Kirwan, Andrew ( Andrew )",VI,G,andrkirw@haverford.org
-    MCCU021,"McCune, Love ( Love )",VI,G,lovemccu@haverford.org
-    MCCU041,"McCullough, Harrison ( Harrison )",VI,G,harrmccu@haverford.org
-    MCDO041,"McDonnell, James ( Jay )",VI,G,jamemcdo@haverford.org
-    MIST011,"Mistry, Kiran ( Kiran )",VI,G,kiramist@haverford.org
-    NDEG011,"Ndegwa-Brown, Amani ( Amani )",VI,G,amanndeg@haverford.org
-    PARA031,"Parayre, Roch ( Roch )",VI,G,rochpara@haverford.org
-    PENN021,"Pennewill, Joseph ( Joey )",VI,G,josepenn@haverford.org
-    PINS011,"Pinsk, Connor ( Connor )",VI,G,connpins@haverford.org
-    POWE031,"Powell, Zachary ( Zach )",VI,G,zachpowe@haverford.org
-    SARD012,"Sardesai, Arnav ( Arnav )",VI,G,arnasard@haverford.org
-    SHAH013,"Shah, Zachary ( Zachary )",VI,G,zachshah@haverford.org
-    SHEA031,"Shea, Aedan ( Aedan )",VI,G,aedashea@haverford.org
-    SQUI011,"Squillaro, Jack ( Jack )",VI,G,jacksqui@haverford.org
-    TOUE011,"Touey, Brendan ( Brendan )",VI,G,brentoue@haverford.org
-    WEIN012,"Weinstein, Luke ( Luke )",VI,G,lukewein@haverford.org
-    WRIG031,"Wright, Gavin ( Gavin )",VI,G,gaviwrig@haverford.org
-    YU031,"Yu, Owen ( Owen )",VI,G,owenyu@haverford.org"""
+    WATS041,"Watson, Luke ( Luke )",V,G,lukewats@haverford.org"""
 
     # creating a csv reader object from the multi-line string
     csvreader = csv.reader(csv_data.split('\n'))
