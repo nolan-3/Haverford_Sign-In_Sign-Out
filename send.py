@@ -22,8 +22,7 @@ def sendAll(students,unregisteredNames):
     port = 465  # For SSL
     smtp_server = "smtp.gmail.com"
     sender_email = "haverfordsignin@gmail.com"  # Enter your address
-    # Kolade
-    receiver_email = ["nolamccl@haverford.org","haverfordsignin@gmail.com"]  # Enter receiver address
+    receiver_email = ["nolamccl@haverford.org","lkolade@haverford.org"]  # Enter receiver address
     password = p
 
     content = 'Name, Grade \n'
@@ -99,9 +98,9 @@ def sendGrades(students,unregisteredNames):
 
 def sendStudents(students,unregisteredNames):
     recipients = []
-    recipients.append("haverfordsignin@gmail.com")
-    #for name in unregisteredNames:
-        #recipients.append(students[name]["email"])
+    recipients.append("nolamccl@haverford.org")
+    for name in unregisteredNames:
+        recipients.append(students[name]["email"])
 
     print(f"sending emails to :{recipients}")
 
