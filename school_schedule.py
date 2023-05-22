@@ -27,7 +27,7 @@ HOLIDAYS = ['2022-09-23', '2022-09-26', '2022-10-05', '2022-10-21', '2022-11-14'
 
 
 # Registration opening/closing times
-OPEN_TIME = time(7, 0)
+OPEN_TIME = time(6, 59)
 CLOSE_TIME = time(9, 31)
 WEDNESDAY_CLOSE_TIME = time(10, 1)
 

@@ -43,13 +43,11 @@
     //There is cooler syntax for lambda function, but it's too cool for me.
     setInterval(function () {
         var date = new Date();
-        if (date.getHours() === 7 && date.getMinutes() === 0) {
+
+         if (date.getHours() === 9 && date.getMinutes() === 32) {
             location.reload()
         }
-        else if (date.getHours() === 9 && date.getMinutes() === 46) {
-            location.reload()
-        }
-        else if (date.getHours() === 10 && date.getMinutes() === 16) {
+        else if (date.getHours() === 10 && date.getMinutes() === 2) {
             location.reload()
         }
     }, 60000); // Repeat every 60000 milliseconds (1 minute)

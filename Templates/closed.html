@@ -92,3 +92,13 @@
       background: linear-gradient(to bottom right, Salmon 50%, Khaki 50%);
   }
 </style>
+
+<script>
+  setInterval(function () {
+        var date = new Date();
+        
+        if (date.getHours() === 7 && date.getMinutes() === 0) {
+            location.reload()
+        }
+    }, 60000); // Repeat every 60000 milliseconds (1 minute)
+</script>
