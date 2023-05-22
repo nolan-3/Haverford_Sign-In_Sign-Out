@@ -110,7 +110,7 @@ def sendStudents(students,unregisteredNames):
     sender_email = "haverfordsignin@gmail.com"  # Enter your address
     #receiver_email = email  # Enter receiver address
     password = p
-    content = "When you have free first period please sign in on the iPad at the front desk"
+    content = "You didn't sign in today. When you have free first period please sign in on the iPad at the front desk"
     freePeriod = free_period()
     month = time.strftime("%B")
     day = str(int(time.strftime("%d")))
