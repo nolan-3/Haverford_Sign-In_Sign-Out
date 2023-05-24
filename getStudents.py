@@ -81,22 +81,6 @@ def getStudents(period):
     STAM022,"Stamps, Gavin ( Gavin )",V,B,gavistam@haverford.org
     VALE011,"Valentino, Anthony ( Anthony )",V,B,anthvale@haverford.org
     WINI013,"Winikur, Asa ( Asa )",V,B,asawini@haverford.org
-    BAKE032,"Baker, Chase ( Chase )",III,C,chasbake@haverford.org
-    CHAK022,"Chakraborty, Ajay ( AJ )",III,C,ajaychak@haverford.org
-    CLAR061,"Clarke, Rauden ( Rauden )",III,C,raudclar@haverford.org
-    CURR051,"Curran, Sean ( Sean )",III,C,seancurr@haverford.org
-    DANI011,"Daniels, Luke ( Luke )",III,C,lukedani@haverford.org
-    DANI021,"Danisi, Gabriel ( Gabe )",III,C,gabrdani@haverford.org
-    DUVE011,"Duvernay, Lamar ( Lamar )",III,C,lamaduve@haverford.org
-    FRAZ011,"Frazier, Walter ( Walt )",III,C,waltfraz@haverford.org
-    GOIN021,"Goins, Ahijah ( Ahijah )",III,C,ahijgoin@haverford.org
-    OLSO011,"Olson, Max ( Max )",III,C,maxolso@haverford.org
-    PHIL021,"Phillips, Destin ( Destin )",III,C,destphil@haverford.org
-    RISC011,"Rischitelli, John ( Jack )",III,C,johnrisc@haverford.org
-    ROME031,"Romeo, Jovanni ( Jovanni )",III,C,jovarome@haverford.org
-    ROUS011,"Rouse, Patrick ( Packy )",III,C,patrrous@haverford.org
-    SHAM021,"Shams, Ryan ( Ryan )",III,C,ryansham@haverford.org
-    TOTH011,"Toth, Colin ( Colin )",III,C,colitoth@haverford.org
     CUDD021,"Cuddeback, John ( Jack )",V,C,johncudd@haverford.org
     HENG011,"Hengst, Austan ( Austan )",V,C,austheng@haverford.org
     JABA011,"Jabateh, Musa ( Musa )",V,C,musajaba@haverford.org
@@ -106,17 +90,6 @@ def getStudents(period):
     RONO011,"Ronon, Gerald ( Tripp )",V,C,gerarono@haverford.org
     ROUS012,"Rouse, John ( John )",V,C,johnrous@haverford.org
     YOH022,"Yoh, Russell ( Russell )",V,C,russyoh@haverford.org
-    CARR051,"Carrasco, Andrew ( Drew )",III,D,andrcarr@haverford.org
-    GREE141,"Greenberg, Brady ( Brady )",III,D,bradgree@haverford.org
-    HOBA012,"Hoban, Matthew ( Matt )",III,D,matthoba@haverford.org
-    NEMO012,"Nemo, Nicholas ( Nicky )",III,D,nichnemo@haverford.org
-    OLIV031,"Oliver, Grant ( Grant )",III,D,granoliv@haverford.org
-    POWE051,"Powers, Maximilian ( Max )",III,D,maxipowe@haverford.org
-    SHAN011,"Shannon, William ( Will )",III,D,willshan@haverford.org
-    SIEV011,"Siever, Caleb ( Caleb )",III,D,calesiev@haverford.org
-    SMYT021,"Smyth, Jaxen ( Jaxen )",III,D,jaxesmyt@haverford.org
-    STIN031,"Stinchon, Oliver ( Oliver )",III,D,olivstin@haverford.org
-    THOM131,"Thomas, Ian ( Ian )",III,D,ianthom@haverford.org
     DECK031,"Decker, Colin ( Colin )",IV,D,colideck@haverford.org
     KREY011,"Krey, Alexander ( Alex )",IV,D,alexkrey@haverford.org
     ROME021,"Romero, Thomas ( TJ )",IV,D,thomrome@haverford.org
