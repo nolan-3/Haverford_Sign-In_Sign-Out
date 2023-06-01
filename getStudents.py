@@ -38,7 +38,6 @@ def getStudents(period):
     SHAF011,"Shaffer, Reilly ( Reilly )",V,A,reilshaf@haverford.org
     TREX011,"Trexler, Noah ( Noah )",V,A,noahtrex@haverford.org
     ZHAN031,"Zhang, Max ( Max )",V,A,maxzhan@haverford.org
-    NYE011,"Nye, Thomas ( Thomas )",III,B,thomnye@haverford.org
     GAFF021,"Gaffney, Thomas ( Mac )",IV,B,thomgaff@haverford.org
     GILL081,"Gillis, Sebastian ( Sebastian )",IV,B,sebagill@haverford.org
     HALP012,"Halpert, Charles ( Charlie )",IV,B,charhalp@haverford.org
