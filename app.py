@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request
-from getStudents import getStudents
 from registration import free_period, register, unregistered_names
 from school_schedule import registration_open
 
@@ -17,7 +16,7 @@ def home():
     # if the time is between 7:00 and 9:30 return active page, if time is outside 7:00 - 9:30 return the inactive page
     # store the students who login between 7:00 and 9:30 and send an email at 9:30 with the list
     if registration_open():
-        return render_template("open.html", names=unregistered_names())
+        return render_template("check-in.html", names=unregistered_names())
 
     return render_template("closed.html")
 

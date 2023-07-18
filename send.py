@@ -22,7 +22,8 @@ def sendAll(students,unregisteredNames):
     port = 465  # For SSL
     smtp_server = "smtp.gmail.com"
     sender_email = "haverfordsignin@gmail.com"  # Enter your address
-    receiver_email = ["nolamccl@haverford.org","lkolade@haverford.org"]  # Enter receiver address
+    # "lkolade@haverford.org"
+    receiver_email = ["nolamccl@haverford.org"]  # Enter receiver address
     password = p
 
     content = 'Name, Grade \n'
@@ -52,17 +53,21 @@ def sendGrades(students,unregisteredNames):
     ################################### CHANGE TO FORM DEANS
         if i == 0:
             target = "III"
-            dean = "scloran@haverford.org"
+            #dean = "scloran@haverford.org"
+            dean = "nolamccl@haverford.org"
         elif i == 1:
             target = "IV"
-            dean = "jhart@haverford.org"
+            #dean = "jhart@haverford.org"
+            dean = "nolamccl@haverford.org"
         elif i == 2:
             target = "V"
-            dean = "tlengel@haverford.org"
+            dean = "nolamccl@haverford.org"
+            #dean = "tlengel@haverford.org"
             # this shouldn't run because the seniors are gone doing senior projects
         elif i == 3:
             target = "VI"
-            dean = "bkenna@haverford.org"
+            dean = "nolamccl@haverford.org"
+            #dean = "bkenna@haverford.org"
         
         port = 465  # For SSL
         smtp_server = "smtp.gmail.com"

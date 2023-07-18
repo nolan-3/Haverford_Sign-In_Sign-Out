@@ -6,7 +6,7 @@ and storing the results to disk.
 import os
 import json
 from datetime import datetime
-from getStudents import getStudents
+from get_students import get_students
 from school_schedule import free_period
 
 LOG_FORMAT = "%Y-%m-%d.json"
@@ -72,7 +72,7 @@ def _read_or_initialize_student_file(date):
     """
     if not os.path.exists(_filename(date)):
         print("creating daily file")
-        _write_student_file(getStudents(free_period()), date)
+        _write_student_file(get_students(free_period()), date)
 
     with open(_filename(date), "r") as file:
         return json.load(file)
