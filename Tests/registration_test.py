@@ -1,5 +1,5 @@
-from registration import unregistered_names, register
-import registration
+from sign_in import unregistered_names, register
+import sign_in
 
 from datetime import datetime
 import os.path
@@ -19,7 +19,7 @@ class TestLogDirectory:
         """Verify that the TEST_LOGS_DIR exists and is empty before each test."""
         assert os.path.exists(TEST_LOGS_DIR)
         assert len(os.listdir(TEST_LOGS_DIR)) == 0
-        registration.LOG_FORMAT = f"{TEST_LOGS_DIR}/%Y-%m-%d.json"
+        sign_in.LOG_FORMAT = f"{TEST_LOGS_DIR}/%Y-%m-%d.json"
 
     def teardown_method(self, method):
         """Remove any remaining files in TEST_LOGS_DIR after each test."""

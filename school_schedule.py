@@ -27,27 +27,47 @@ HOLIDAYS = ['2022-09-23', '2022-09-26', '2022-10-05', '2022-10-21', '2022-11-14'
 
 
 # Registration opening/closing times
-OPEN_TIME = time(6, 59)
-CLOSE_TIME = time(9, 31)
-WEDNESDAY_CLOSE_TIME = time(10, 1)
+REGISTRATION_OPEN_TIME = time(1, 10)
+REGISTRATION_CLOSE_TIME = time(19, 31)
+REGISTRATION_WEDNESDAY_CLOSE_TIME = time(10, 1)
+SCHOOL_CLOSE_TIME = time(15, 16)
 
 
 def registration_open():
+    return False
     """Check whether registration is open at a given datetime."""
     timestamp=datetime.now(TIMEZONE)
     print(f"Checking registration at {timestamp}.")
     _validate_datetime(timestamp)
 
     # check if it is a school day
-    # # # # # # if not _open_day(timestamp):
-    # # # # # #     return False
+    if not _open_day(timestamp):
+        print("Today is not a school day")
+        return False
 
     # Wednesday :|
     if timestamp.strftime("%A") == "Wednesday":
-        return (OPEN_TIME <= timestamp.time()) and (timestamp.time() <= WEDNESDAY_CLOSE_TIME)
+        return (REGISTRATION_OPEN_TIME <= timestamp.time()) and (timestamp.time() <= REGISTRATION_WEDNESDAY_CLOSE_TIME)
     
     # Otherwise
-    return (OPEN_TIME <= timestamp.time()) and (timestamp.time() <= CLOSE_TIME)
+    return (REGISTRATION_OPEN_TIME <= timestamp.time()) and (timestamp.time() <= REGISTRATION_CLOSE_TIME)
+
+def sign_out_open():
+    return True
+    timestamp=datetime.now(TIMEZONE)
+    _validate_datetime(timestamp)
+
+    # check if it is a school day
+    if not _open_day(timestamp):
+        return False
+
+    # Wednesday :|
+    if timestamp.strftime("%A") == "Wednesday":
+        return (REGISTRATION_WEDNESDAY_CLOSE_TIME <= timestamp.time()) and (timestamp.time() <= SCHOOL_CLOSE_TIME)
+    
+    # Otherwise
+    return (REGISTRATION_CLOSE_TIME <= timestamp.time()) and (timestamp.time() <= SCHOOL_CLOSE_TIME)
+
 
 
 def free_period():
