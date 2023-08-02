@@ -3,20 +3,12 @@ This module provides functions for working with a list of students
 and storing the results to disk.
 """
 
-import os
-import json
 from datetime import datetime
-from get_students import get_students
-from school_schedule import free_period
+from logging import _read_or_initialize_student_file
+from logging import _filename
+from logging import _write_student_file
 
-LOG_FORMAT = "%Y-%m-%d.json"
-
-# used getStudents to avoid import errors of csv data on pythonAnywhere
-# def all_students():
-#     """Read the list of all students, and construct a dictionary indexed by name."""
-
-
-def unregistered_names(grades=["III", "IV", "V", "VI"]):
+def unregistered_names(grades=["V", "VI"]):
     date = datetime.now()
     """Return the names of unregistered students matching `grades` for a given date.
     Looks for student data in "logs/YYYY-MM-DD.json". If necessary, a new file will be created
@@ -24,7 +16,6 @@ def unregistered_names(grades=["III", "IV", "V", "VI"]):
     """
     # Look for the file, if it doesn't exist create it and populate it.
     students = _read_or_initialize_student_file(date)
-
     return [name for name, info in students.items() if info["grade"] in grades and not info["signedIn"]]
 
 
@@ -47,33 +38,5 @@ def register(name):
     _write_student_file(students, date)
 
 
-def _filename(date):
-    """Construct a filename corresponding to a given date. Returns "logs/YYYY-MM-DD.json" """
-    return date.strftime(LOG_FORMAT)
 
-
-def _write_student_file(students, date):
-    """Write student information to "logs/YYYY-MM-DD.json", overwriting any existing contents."""
-    with open(_filename(date), "w+") as file:
-        json.dump(students, file)
-
-# handled by getStudents
-# def _initialize_students(date):
-#     """Initialize a list of students with free period on a given date."""
-#     free_students = {name : info for name, info in all_students().items() if info["free"] == free_period() }
-#     return {name: {**info, "signedIn": False} for name, info in free_students.items()}
-
-
-def _read_or_initialize_student_file(date):
-    """Open a student file for reading, initializing a new file if necessary.
-
-    Looks for student data in "logs/YYYY-MM-DD.json".
-    New files will be initialized from the school school schedule.
-    """
-    if not os.path.exists(_filename(date)):
-        print("creating daily file")
-        _write_student_file(get_students(free_period()), date)
-
-    with open(_filename(date), "r") as file:
-        return json.load(file)
 

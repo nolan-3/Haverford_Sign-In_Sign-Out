@@ -1,5 +1,9 @@
 import csv
 
+NAME_INDEX = 1
+GRADE_INDEX = 2
+PERIOD_INDEX = 3
+EMAIL_INDEX = 4
 # Returns the list of students who have the given free period first
 
 class Student:
@@ -8,14 +12,11 @@ class Student:
         self.signedIn = signedIn
         self.email = email
 
-def get_students(period):
+def get_students(period,grades=["V","VI"]):
     students = {}
-    name_index = 1
-    grade_index = 2
-    period_index = 3
-    email_index = 4
 
     # CSV data as a multi-line string
+    # should include all fifth and sixth formers (fourth?)
     csv_data = """ID,name,grade,free,email
     COOP051,"Cooper, Gavin ( Gavin )",IV,A,gavicoop@haverford.org
     GERG011,"Gergo, Peter ( Peter )",IV,A,petegerg@haverford.org
@@ -173,13 +174,14 @@ def get_students(period):
 
     # extracting each data row one by one
     for row in csvreader:
-        free = row[period_index]
-        if free == period:
-            name = row[name_index]
-            grade = row[grade_index]
-            email = row[email_index]
+        free = row[PERIOD_INDEX]
+        grade = row[GRADE_INDEX]
+        if free == period and grade in grades:
+            name = row[NAME_INDEX]
+            grade = grade
+            email = row[EMAIL_INDEX]
 
             #students[name] = Student(grade,email)
-            students[name] = {"signedIn": False, "grade": grade, "email": email,}
+            students[name] = {"signedIn": False, "checkedOut": False, "checkedIn": False, "grade": grade, "email": email,}
 
     return students

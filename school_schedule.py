@@ -27,14 +27,13 @@ HOLIDAYS = ['2022-09-23', '2022-09-26', '2022-10-05', '2022-10-21', '2022-11-14'
 
 
 # Registration opening/closing times
-REGISTRATION_OPEN_TIME = time(1, 10)
-REGISTRATION_CLOSE_TIME = time(19, 31)
+REGISTRATION_OPEN_TIME = time(6, 59)
+REGISTRATION_CLOSE_TIME = time(9, 31)
 REGISTRATION_WEDNESDAY_CLOSE_TIME = time(10, 1)
 SCHOOL_CLOSE_TIME = time(15, 16)
 
 
 def registration_open():
-    return False
     """Check whether registration is open at a given datetime."""
     timestamp=datetime.now(TIMEZONE)
     print(f"Checking registration at {timestamp}.")
@@ -53,7 +52,6 @@ def registration_open():
     return (REGISTRATION_OPEN_TIME <= timestamp.time()) and (timestamp.time() <= REGISTRATION_CLOSE_TIME)
 
 def sign_out_open():
-    return True
     timestamp=datetime.now(TIMEZONE)
     _validate_datetime(timestamp)
 

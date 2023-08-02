@@ -31,26 +31,29 @@ def sign_in():
 # Time by itself is not enough to tell whether check_out or check_in should be open
 # When navigated to the page checks if it CAN be open based on time.
 # On a post request it returns to the sign_out home screen
+# only one call to current_page is necessary, but I included two to make the logic more obvious
 @app.route('/check_out',methods=["GET","POST"])
 def check_out():
     if request.method == "POST":
-        None
         #check_out(student)
+        return current_page()
     elif request.method == "GET" and sign_out_open():
         return render_template("check-out.html",names=["nolan good"," nolan great"])
     # on post request go back to the sign out homescreen, or if it is now closed go to the closed screen
-    return current_page()
+    else:
+        return current_page()
         
 
 @app.route('/check_in',methods=["GET","POST"])
 def check_in():
     if request.method == "POST":
-        None
         #check_in(student)
+        return current_page()
     elif request.method == "GET" and sign_out_open():
         return render_template("check-in.html",names=["nolan","nolan2"])
         # on post request go back to the sign out homescreen, or if it is now closed go to the closed screen
-    return current_page()
+    else:
+        return current_page()
 
 if __name__ == '__main__':
     app.run(debug=False, port=8000)
