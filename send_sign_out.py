@@ -6,7 +6,7 @@ from password import p
 from school_schedule import free_period
 # given a list of students, sends that list to a specified email address.
 
-def send(students):
+def send_not_signed_in_students(students):
     dayOfWeek = time.strftime("%A")
     #if dayOfWeek == "Saturday" or dayOfWeek == "Sunday":
         #return

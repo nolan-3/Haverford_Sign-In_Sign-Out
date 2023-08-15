@@ -7,9 +7,9 @@ EMAIL_INDEX = 4
 # Returns the list of students who have the given free period first
 
 class Student:
-    def __init__(self, grade, email, signedIn=False):
+    def __init__(self, grade, email, signed_in=False):
         self.grade = grade
-        self.signedIn = signedIn
+        self.signed_in = signed_in
         self.email = email
 
 def get_students(period,grades=["V","VI"]):
@@ -176,12 +176,12 @@ def get_students(period,grades=["V","VI"]):
     for row in csvreader:
         free = row[PERIOD_INDEX]
         grade = row[GRADE_INDEX]
+        name = row[NAME_INDEX]
+        email = row[EMAIL_INDEX]
+
         if free == period and grade in grades:
-            name = row[NAME_INDEX]
-            grade = grade
-            email = row[EMAIL_INDEX]
-
-            #students[name] = Student(grade,email)
-            students[name] = {"signedIn": False, "checkedOut": False, "checkedIn": False, "grade": grade, "email": email,}
-
+            students[name] = {"signed_in": False, "checked_out": False, "checked_in": False, "grade": grade, "email": email}
+        # if the student doesn't have free period first they will be marked present by their teacher
+        else:
+            students[name] = {"signed_in": True, "checked_out": False, "checked_in": False, "grade": grade, "email": email}
     return students

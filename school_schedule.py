@@ -10,21 +10,17 @@ import numpy as np
 TIMEZONE = timezone("America/New_York")
 
 # Print a warning for dates outside this range:
-VALID_START = datetime(2022, 9, 8, tzinfo=TIMEZONE)
-VALID_END = datetime(2023, 6, 6, tzinfo=TIMEZONE)
+VALID_START = datetime(2023, 9, 6, tzinfo=TIMEZONE)
+VALID_END = datetime(2024, 6, 7, tzinfo=TIMEZONE)
 # Holidays and schedule information
 #   FREE_PATTERN[0] should correspond to FIRST_DAY
 #   holiday format: "YYYY-MM-DD"
-FIRST_DAY = datetime(2022, 9, 8, tzinfo=TIMEZONE)
+FIRST_DAY = datetime(2023, 9, 6, tzinfo=TIMEZONE)
 FREE_PATTERN = ["A", "E", "B", "F", "C", "G", "D"]
-# It seems we had a day off in November represented by the non-factual holiday 2022-22-28
-HOLIDAYS = ['2022-09-23', '2022-09-26', '2022-10-05', '2022-10-21', '2022-11-14', '2022-11-23', '2022-11-24', '2022-11-25',
-            '2022-11-28',
-            '2022-12-19', '2022-12-20', '2022-12-21', '2022-12-22', '2022-12-23', '2022-12-26', '2022-12-27',
-            '2022-12-28', '2022-12-29', '2022-12-30', '2023-01-02', '2023-01-16', '2023-02-17', '2023-02-20',
-            '2023-03-17', '2023-03-24', '2023-03-27', '2023-03-28', '2023-03-29', '2023-03-30', '2023-03-31',
-            '2023-04-07', '2023-05-01', '2023-05-17', '2023-05-29']
-
+HOLIDAYS = ['2023-09-25','2023-10-09','2023-10-20','2023-11-13','2023-11-22','2023-11-23','2023-11-24','2023-12-18',
+            '2023-12-19','2023-12-20','2023-12-21','2023-12-22','2023-12-25','2023-12-26','2023-12-27','2023-12-28',
+            '2023-12-29','2024-01-01','2024-01-15','2024-02-16','2024-02-19','2024-03-15','2024-03-22','2024-03-25',
+            '2024-03-26','2024-03-27','2024-03-28','2024-03-29','2024-04-26','2024-04-29','2023-05-27']
 
 # Registration opening/closing times
 REGISTRATION_OPEN_TIME = time(6, 59)
