@@ -10,11 +10,11 @@ app = Flask(__name__, static_url_path='', static_folder='static',)
 # if the time is between 7:00 and 9:30 return sign-in page, if time is between 9:30 and 3:15 return campus sign-out page
 def current_page():
     if registration_open():
-        return render_template("sign-in.html", names=not_signed_in_names())
+        return render_template("Templates/sign-in.html", names=not_signed_in_names())
     elif sign_out_open():
-        return render_template("sign-out.html")
+        return render_template("Templates/sign-out.html")
     else:
-        return render_template("closed.html")
+        return render_template("Templates/closed.html")
 
 # home could be sign_in
 @app.route('/', methods=["GET", "POST"])
