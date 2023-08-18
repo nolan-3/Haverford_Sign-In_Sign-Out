@@ -12,7 +12,7 @@ def current_page():
     if registration_open():
         return render_template("sign-in.html", names=not_signed_in_names())
     elif sign_out_open():
-        return render_template("sign-out.html", names=["nolan","also nolan"])
+        return render_template("sign-out.html")
     else:
         return render_template("closed.html")
 
