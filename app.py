@@ -5,7 +5,7 @@ from check_in import checked_out_names, check_in_student
 from school_schedule import registration_open, sign_out_open
 
 
-app = Flask(__name__, static_url_path='', static_folder='static',)
+app = Flask(__name__, static_url_path='', static_folder='static',template_folder='Templates')
 
 # if the time is between 7:00 and 9:30 return sign-in page, if time is between 9:30 and 3:15 return campus sign-out page
 # def current_page():
