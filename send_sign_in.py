@@ -28,7 +28,7 @@ def sendAll(students,unregisteredNames):
 
     content = 'Name, Grade \n'
     for name in unregisteredNames:
-        content += name + " " + students[name]["grade"] + '\n'
+        content += name + ", " + students[name]["grade"] + '\n'
     freePeriod = free_period()
     month = time.strftime("%B")
     day = str(int(time.strftime("%d")))
