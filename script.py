@@ -5,8 +5,8 @@ from send_sign_in import send_not_signed_in_students
 from send_sign_out import send_checked_out_students
 import time
 
-print("Closing Script Called")
 day_of_week = time.strftime("%A")
+print(f"Closing Script Called On '{day_of_week}'")
 if day_of_week == "Wednesday":
     time.sleep(1800)
     print("Wednesday: Task Slept For 1800 Seconds")
