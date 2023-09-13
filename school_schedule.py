@@ -17,7 +17,7 @@ VALID_END = datetime(2024, 6, 7, tzinfo=TIMEZONE)
 # Holidays and schedule information
 #   FREE_PATTERN[0] should correspond to FIRST_DAY
 #   holiday format: "YYYY-MM-DD"
-FIRST_DAY = datetime(2023, 9, 6, tzinfo=TIMEZONE)
+FIRST_DAY = datetime(2023, 9, 7, tzinfo=TIMEZONE)
 FREE_PATTERN = ["A", "E", "B", "F", "C", "G", "D"]
 HOLIDAYS = ['2023-09-25','2023-10-09','2023-10-20','2023-11-13','2023-11-22','2023-11-23','2023-11-24','2023-12-18',
             '2023-12-19','2023-12-20','2023-12-21','2023-12-22','2023-12-25','2023-12-26','2023-12-27','2023-12-28',
@@ -27,7 +27,7 @@ HOLIDAYS = ['2023-09-25','2023-10-09','2023-10-20','2023-11-13','2023-11-22','20
 # Registration opening/closing times
 REGISTRATION_OPEN_TIME = time(6, 59)
 REGISTRATION_CLOSE_TIME = time(9, 31)
-REGISTRATION_WEDNESDAY_CLOSE_TIME = time(10, 1)
+REGISTRATION_WEDNESDAY_CLOSE_TIME = time(15, 1)
 SCHOOL_CLOSE_TIME = time(15, 16)
 
 # Free version of python anywhere only allows one scheduled task 

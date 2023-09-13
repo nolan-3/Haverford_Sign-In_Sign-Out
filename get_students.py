@@ -136,6 +136,9 @@ KEID011,"Keidel, Philip (Charlie)",VI,C,philkeid@haverford.org
 KELL081,"Kelly, William (William)",VI,C,willkell@haverford.org
 LYON031,"Lyon, Andrew (Andrew)",VI,C,andrlyon@haverford.org
 MCCA102,"McCarthy, Benjamin (Ben)",VI,C,benjmcca@haverford.org
+BROD032,"Brodnik, Timothy (TJ)",IV,D,timobrod@haverford.org
+CLAR061,"Clarke, Rauden (Rauden)",IV,D,raudclar@haverford.org
+JONE151,"Jones, Matthew (Matt)",IV,D,mattjone@haverford.org
 BIRC011,"Birch, Zahmir (Zahmir)",V,D,zahmbirc@haverford.org
 BOUC011,"Bouchard, Nicholas (Nick)",V,D,nichbouc@haverford.org
 CARP021,"Carpenter, Devin (Devin)",V,D,devicarp@haverford.org
@@ -179,6 +182,9 @@ PRYM011,"Pryma, Reilly (Reilly)",VI,D,reilprym@haverford.org
 RALE012,"Raleigh, Jackson (Jackson)",VI,D,jackrale@haverford.org
 RAYE011,"Rayer, William (Billy)",VI,D,willraye@haverford.org
 ZHAN031,"Zhang, Max (Max)",VI,D,maxzhan@haverford.org
+VAND031,"Vandiver, Henry (Henry)",IV,E,henrvand@haverford.org
+WANG081,"Wang, Jonathan (Jonny)",IV,E,jonawang@haverford.org
+ZHAO011,"Zhao, Kaiser (Kaiser)",IV,E,kaiszhao@haverford.org
 ROUS012,"Rouse, John (John)",VI,E,johnrous@haverford.org
 SCHW031,"Schwarting, Christopher (Christopher)",VI,E,chrischw@haverford.org
 WALK062,"Walker, William (William)",VI,E,willwalk@haverford.org
