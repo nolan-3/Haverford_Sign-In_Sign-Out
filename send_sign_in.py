@@ -6,15 +6,16 @@ from password import p
 from school_schedule import free_period
 # given a list of students, sends that list to a specified email address.
 
-def send_not_signed_in_students(students):
-    dayOfWeek = time.strftime("%A")
-    #if dayOfWeek == "Saturday" or dayOfWeek == "Sunday":
-        #return
-    #else:
-    unregisteredNames = [name for name in students if students[name]["signed_in"] == False]
-    sendAll(students,unregisteredNames)
-    sendGrades(students,unregisteredNames)
-    sendStudents(students,unregisteredNames)
+def send_not_signed_in_students(info):
+    day_of_week = time.strftime("%A")
+    unregistered_names = [name for name in info if info[name]["signed_in"] == False]
+    sendAll(info,unregistered_names)
+    sendGrades(info,unregistered_names)
+    sendStudents(info,unregistered_names)
+
+
+
+
 
 
 def sendAll(students,unregisteredNames):
@@ -23,7 +24,7 @@ def sendAll(students,unregisteredNames):
     smtp_server = "smtp.gmail.com"
     sender_email = "haverfordsignin@gmail.com"  # Enter your address
     # "lkolade@haverford.org"
-    receiver_email = ["nolamccl@haverford.org"]  # Enter receiver address
+    receiver_email = ["nolamccl@haverford.org","lkolade@haverford.org"]  # Enter receiver address
     password = p
 
     content = 'Name, Grade \n'
@@ -46,6 +47,10 @@ def sendAll(students,unregisteredNames):
         server.login(sender_email, password)
         server.send_message(msg, from_addr=sender_email,
                             to_addrs=receiver_email)
+        
+
+
+
 
 def sendGrades(students,unregisteredNames):
     # send 3 emails 1 to each form dean
@@ -100,6 +105,9 @@ def sendGrades(students,unregisteredNames):
                                 to_addrs=receiver_email)
         
         
+
+
+
 
 def sendStudents(students,unregisteredNames):
     recipients = []

@@ -5,6 +5,8 @@ handling vacations, registration times and the current free period.
 from pytz import timezone
 from datetime import time, datetime
 import numpy as np
+from send_sign_out import send_checked_out_students
+import json
 
 # All times are localized and interpreted in this timezone.
 TIMEZONE = timezone("America/New_York")
@@ -26,10 +28,20 @@ HOLIDAYS = ['2023-09-25','2023-10-09','2023-10-20','2023-11-13','2023-11-22','20
 REGISTRATION_OPEN_TIME = time(6, 59)
 REGISTRATION_CLOSE_TIME = time(9, 31)
 REGISTRATION_WEDNESDAY_CLOSE_TIME = time(10, 1)
-SCHOOL_CLOSE_TIME = time(15, 16)
+SCHOOL_CLOSE_TIME = time(23, 16)
+
+def check_for_closing_email():
+    timestamp=datetime.now(TIMEZONE)
+    if timestamp.hour == 15 and timestamp.minute == 17:
+        filename = datetime.now().strftime("%Y-%m-%d.json")
+        with open(filename, "r") as file:
+            data = json.loads(file.read())
+            send_checked_out_students(data)
+
 
 
 def registration_open():
+    check_for_closing_email()
     """Check whether registration is open at a given datetime."""
     timestamp=datetime.now(TIMEZONE)
     print(f"Checking registration at {timestamp}.")
@@ -48,6 +60,7 @@ def registration_open():
     return (REGISTRATION_OPEN_TIME <= timestamp.time()) and (timestamp.time() <= REGISTRATION_CLOSE_TIME)
 
 def sign_out_open():
+    check_for_closing_email()
     timestamp=datetime.now(TIMEZONE)
     _validate_datetime(timestamp)
 
