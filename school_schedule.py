@@ -30,6 +30,7 @@ REGISTRATION_CLOSE_TIME = time(9, 31)
 REGISTRATION_WEDNESDAY_CLOSE_TIME = time(10, 1)
 SCHOOL_CLOSE_TIME = time(15, 16)
 
+# Free version of python anywhere only allows one scheduled task 
 def check_for_closing_email():
     timestamp=datetime.now(TIMEZONE)
     if timestamp.hour == 15 and timestamp.minute == 17:
