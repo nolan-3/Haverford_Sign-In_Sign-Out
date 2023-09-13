@@ -54,7 +54,7 @@ def sendAll(students,unregisteredNames):
 
 def sendGrades(students,unregisteredNames):
     # send emails to form deans
-    for i in range(2,4):
+    for i in range(1,4):
     ################################### CHANGE TO FORM DEANS
         if i == 0:
             target = "III"
