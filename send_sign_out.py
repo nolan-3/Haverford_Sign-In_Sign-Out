@@ -15,7 +15,7 @@ def send_checked_out_students(info):
 
     content = 'Name of checked out student, Checked back in \n'
     for name in checked_out_names:
-        content += name + ", " + info[name]["checked_in"]
+        content += name + ", " + str(info[name]["checked_in"])
 
     month = time.strftime("%B")
     day = str(int(time.strftime("%d")))
