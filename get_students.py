@@ -318,9 +318,20 @@ WOLI011,"Wolitarsky, James (William)",VI,G,jamewoli@haverford.org"""
         name = row[NAME_INDEX]
         email = row[EMAIL_INDEX]
 
+        students[name] = {"signed_in": True, "checked_out": False, "checked_in": False, "grade": grade, "email": email}
+    csvreader = csv.reader(csv_data.split('\n'))
+
+    # if the student doesn't have free period first they will be marked present by their teacher
+    # if the student has free period first they must sign in using this app
+    fields = next(csvreader)
+
+    for row in csvreader:
+        free = row[PERIOD_INDEX]
+        name = row[NAME_INDEX]
+        
         if free == period:
-            students[name] = {"signed_in": False, "checked_out": False, "checked_in": False, "grade": grade, "email": email}
-        # if the student doesn't have free period first they will be marked present by their teacher
-        else:
-            students[name] = {"signed_in": True, "checked_out": False, "checked_in": False, "grade": grade, "email": email}
+            students[name]["signed_in"] = False
+
     return students
+
+get_students("A")
