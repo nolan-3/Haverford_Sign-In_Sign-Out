@@ -27,7 +27,7 @@ HOLIDAYS = ['2023-09-25','2023-10-09','2023-10-20','2023-11-13','2023-11-22','20
 # Registration opening/closing times
 REGISTRATION_OPEN_TIME = time(6, 59)
 REGISTRATION_CLOSE_TIME = time(9, 31)
-REGISTRATION_WEDNESDAY_CLOSE_TIME = time(15, 1)
+REGISTRATION_WEDNESDAY_CLOSE_TIME = time(10, 1)
 SCHOOL_CLOSE_TIME = time(15, 16)
 
 # Free version of python anywhere only allows one scheduled task 
