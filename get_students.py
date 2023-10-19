@@ -149,7 +149,7 @@ BOUC011,"Bouchard, Nicholas (Nick)",V,D,nichbouc@haverford.org
 CARP021,"Carpenter, Devin (Devin)",V,D,devicarp@haverford.org
 DALT011,"Dalton, Connor (Connor)",V,D,conndalt@haverford.org
 DEAN042,"Dean, James (James)",V,D,jamedean@haverford.org
-DEGE012,"Degenhardt, Kai (Kai)",V,DD,kaidege@haverford.org
+DEGE012,"Degenhardt, Kai (Kai)",V,D,kaidege@haverford.org
 GAFF021,"Gaffney, Thomas (Mac)",V,D,thomgaff@haverford.org
 HARO012,"Haron, Myles (Myles)",V,D,myleharo@haverford.org
 KANE031,"Kanefsky, Noah (Noah)",V,D,noahkane@haverford.org
@@ -326,15 +326,14 @@ WOLI011,"Wolitarsky, James (William)",VI,G,jamewoli@haverford.org"""
 
     # if the student doesn't have free period first they will be marked present by their teacher
     # if the student has free period first they must sign in using this app
-    fields = next(csvreader)
+    #fields = next(csvreader)
 
     for row in csvreader:
         free = row[PERIOD_INDEX]
         name = row[NAME_INDEX]
-        
+        #print(f"{name} has free period {free}")
+
         if free == period:
             students[name]["signed_in"] = False
 
     return students
-
-get_students("A")

@@ -26,7 +26,7 @@ HOLIDAYS = ['2023-09-25','2023-10-09','2023-10-20','2023-11-13','2023-11-22','20
 
 # Registration opening/closing times
 REGISTRATION_OPEN_TIME = time(6, 59)
-REGISTRATION_CLOSE_TIME = time(9, 31)
+REGISTRATION_CLOSE_TIME = time(19, 31)
 REGISTRATION_WEDNESDAY_CLOSE_TIME = time(10, 1)
 SCHOOL_CLOSE_TIME = time(15, 16)
 
@@ -86,7 +86,6 @@ def free_period():
     # Free periods rotate according to FREE_PATTERN, but only on school days
     school_days = np.busday_count(FIRST_DAY.strftime(
         "%Y-%m-%d"), timestamp.strftime("%Y-%m-%d"), holidays=HOLIDAYS)
-
     return FREE_PATTERN[school_days % 7]
 
 
@@ -101,6 +100,3 @@ def _open_day(timestamp):
     """Check whether a given date is a holiday"""
     _validate_datetime(timestamp)
     return np.is_busday(timestamp.strftime("%Y-%m-%d"), holidays=HOLIDAYS)
-
-# print(datetime.now(TIMEZONE))
-# print(free_period())
