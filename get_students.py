@@ -126,7 +126,7 @@ MCCA102,"McCarthy, Benjamin (Ben)",VI,C,benjmcca@haverford.org
 MCCO071,"McCoy, John (Thacher)",VI,C,johnmcco@haverford.org
 MORA031,"Moran, Ryan (Ryan)",VI,C,ryanmora@haverford.org
 MORR081,"Morris, Kyle (Kyle)",VI,C,kylemorr@haverford.org
-OKAN011,"O'Kane, Brady (Brady)",VI,C,brado'ka@haverford.org
+OKAN011,"O'Kane, Brady (Brady)",VI,C,bradokan@haverford.org
 REAV011,"Reavey, Kevin (Kevin)",VI,C,kevireav@haverford.org
 RONO011,"Ronon, Gerald (Tripp)",VI,C,gerarono@haverford.org
 SCAN011,"Scanlan, Connor (Connor)",VI,C,connscan@haverford.org
@@ -292,7 +292,7 @@ LU011,"Lu, Nicholas (Nicholas)",V,G,nichlu@haverford.org
 MCCL053,"McClave, Jude (Jude)",V,G,judemccl@haverford.org
 OSWA011,"Oswald, Zachary (Zack)",V,G,zachoswa@haverford.org
 PATT031,"Patterson, Christos (Christos)",V,G,chripatt@haverford.org
-RHOD031,"Rhodes, Alexander (Alex)",V,G,alexrhod@haverford.org
+RHOD031,"Rhodes, Alexander (Alex)",V,G,alexrhod2@haverford.org
 ROGE043,"Rogers, Jay (Jay)",V,G,jayroge@haverford.org
 SHAR032,"Sharma, Unnav (Unnav)",V,G,unnashar@haverford.org
 SWEI011,"Swei, Preston (Preston)",V,G,presswei@haverford.org
@@ -336,4 +336,7 @@ WOLI011,"Wolitarsky, James (William)",VI,G,jamewoli@haverford.org"""
         if free == period:
             students[name]["signed_in"] = False
 
+    for student in students:
+        if students[student]["signed_in"] == False:
+            print(student)
     return students

@@ -8,7 +8,7 @@ from custom_logging import _read_or_initialize_student_file
 from custom_logging import _filename
 from custom_logging import _write_student_file
 
-def not_signed_in_names(grades=["V", "VI"]):
+def not_signed_in_names():
     date = datetime.now()
     """Return the names of unregistered students matching `grades` for a given date.
     Looks for student data in "logs/YYYY-MM-DD.json". If necessary, a new file will be created
@@ -16,7 +16,7 @@ def not_signed_in_names(grades=["V", "VI"]):
     """
     # Look for the file, if it doesn't exist create it and populate it.
     students = _read_or_initialize_student_file(date)
-    return [name for name, info in students.items() if info["grade"] in grades and not info["signed_in"]]
+    return [name for name, info in students.items() if not info["signed_in"]]
 
 
 def sign_in_student(name):
