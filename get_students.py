@@ -63,7 +63,6 @@ JORD011,"Jordan, Frederick (Fred)",VI,B,fredjord@haverford.org
 KOHL022,"Kohlenberg, John (John)",VI,B,johnkohl@haverford.org
 MARR011,"Marr, Maximillian (Max)",VI,B,maximarr@haverford.org
 MORA031,"Moran, Ryan (Ryan)",VI,B,ryanmora@haverford.org
-NEWH012,"Newhall, Henry (Henry)",VI,B,henrnewh@haverford.org
 RAYE011,"Rayer, William (Billy)",VI,B,willraye@haverford.org
 SHAF011,"Shaffer, Reilly (Reilly)",VI,B,reilshaf@haverford.org
 VALE011,"Valentino, Anthony (Anthony)",VI,B,anthvale@haverford.org
