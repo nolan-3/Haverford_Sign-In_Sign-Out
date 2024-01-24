@@ -1,4 +1,4 @@
-# Script is called at 9:46 each day to send emails, if the day is wednesday wait until 10:16
+# Script is called at 9:32 each day to send emails, if the day is wednesday wait until 10:02
 from datetime import datetime
 import json
 from send_sign_in import send_not_signed_in_students
