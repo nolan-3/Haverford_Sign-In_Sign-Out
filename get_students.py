@@ -19,11 +19,9 @@ def get_students(period):
     # should include all fifth and sixth formers
     csv_data = """name,grade,free,email
 "Friel, James ( James )",IV,A,jamefrie@haverford.org
-"Pennington, Samuel ( Samuel )",IV,A,samupenn@haverford.org
 "Aloi, Luca ( Luca )",V,A,lucaaloi@haverford.org
 "Barr, Thomas ( Thomas )",V,A,thombarr@haverford.org
 "Campbell, Reed ( Reed )",V,A,reedcamp@haverford.org
-"Carson, Kenneth ( Kenneth )",V,A,kenncars@haverford.org
 "Crutchlow, Michael ( Michael )",V,A,michcrut@haverford.org
 "Dean, James ( James )",V,A,jamedean@haverford.org
 "Decker, Colin ( Colin )",V,A,colideck@haverford.org
@@ -31,6 +29,7 @@ def get_students(period):
 "Fredriksz, Hayden ( Hayden )",V,A,haydfred@haverford.org
 "French, William ( Liam )",V,A,willfren@haverford.org
 "Gillis, Sebastian ( Sebastian )",V,A,sebagill@haverford.org
+"Hoilett, McKai ( McKai )",V,A,hoilmcka@haverford.org
 "Kelly, Finn ( Finn )",V,A,finnkell@haverford.org
 "Koenig, Harry ( Harry )",V,A,harrkoen@haverford.org
 "Krakovitz, Nicholas ( Nick )",V,A,nichkrak@haverford.org
@@ -47,14 +46,15 @@ def get_students(period):
 "Wai, Ryan ( Ryan )",V,A,ryanwai@haverford.org
 "Wang, Simon ( Simon )",V,A,simowang@haverford.org
 "Wiegand, Mason ( Mason )",V,A,masowieg@haverford.org
+"Campbell-Williams, Colin ( Colin )",V,colicamp@haverford.org
 "Brosko, Matthew ( Matt )",VI,A,mattbros@haverford.org
 "Conklin, Mitchell ( Tate )",VI,A,mitcconk@haverford.org
 "Cuddeback, John ( Jack )",VI,A,johncudd@haverford.org
 "DeLuca, Alexander ( Alec )",VI,A,alexdelu@haverford.org
 "Glaser, Andrew ( Drew )",VI,A,andrglas@haverford.org
 "Hoyt, Benjamin ( Benjamin )",VI,A,benjhoyt@haverford.org
+"Jiru, Samuel ( Samuel )",VI,A,samujiru@ghaverford.org
 "Jordan, Frederick ( Fred )",VI,A,fredjord@haverford.org
-"Lawrence, Peter ( Finn )",VI,A,petelawr@haverford.org
 "McCarthy, Benjamin ( Ben )",VI,A,benjmcca@haverford.org
 "Morris, Kyle ( Kyle )",VI,A,kylemorr@haverford.org
 "Raleigh, Jackson ( Jackson )",VI,A,jackrale@haverford.org
@@ -63,11 +63,14 @@ def get_students(period):
 "Stewart, David ( David )",VI,A,davistew@haverford.org
 "Valentino, Anthony ( Anthony )",VI,A,anthvale@haverford.org
 "Wylie, Michael ( Michael )",VI,A,michwyli@haverford.org
+"Becker, Jacob ( Jacob )",V,B,jacobeck@haverford.org
+"Becker, Leo ( Leo )",V,B,leobeck@haverford.org
 "Borghese, Alexander ( Alex )",V,B,alexborg@haverford.org
 "Brinkley, Dhakir ( Dhakir )",V,B,dhakbrin@haverford.org
 "Childs, Reece ( Reece )",V,B,reecchil@haverford.org
 "Ganley, Luke ( Luke )",V,B,lukeganl@haverford.org
 "Gardner, Kellen ( Kellen )",V,B,kellgard@haverford.org
+"Gergo, Peter ( Peter )",V,B,petegerg@haverford.org
 "Green, Robert ( Brenner )",V,B,robegree@haverford.org
 "Halpert, Charles ( Charlie )",V,B,charhalp@haverford.org
 "Large, Evan ( Evan )",V,B,evanlarg@haverford.org
@@ -94,11 +97,10 @@ def get_students(period):
 "Schwarting, Christopher ( Christopher )",VI,B,chrischw@haverford.org
 "Seward, William ( Henry )",VI,B,willsewa@haverford.org
 "White, Michael (Ian )",VI,B,michwhit@haverford.org
+"Costa, Anthony ( Anthony ),IV,C,anthcost@haverford.org
 "Horwitz, Jacob ( Jacob )",IV,C,jacohorw@haverford.org
-"Wang, Jonathan ( Jonny )",IV,C,jonawang@haverford.org
 "Allen, Sean ( Sean )",V,C,seanalle@haverford.org
 "Bouchard, Nicholas ( Nick )",V,C,nichbouc@haverford.org
-"Gaffney, Thomas ( Mac )",V,C,thomgaff@haverford.org
 "Gordon, Avery ( Avery )",V,C,avergord@haverford.org
 "Grant, Edmund ( Eddie )",V,C,edmugran@haverford.org
 "Lee, Semaj ( Semaj )",V,C,semalee@haverford.org
@@ -107,8 +109,8 @@ def get_students(period):
 "Okonkwo, Martin ( Afam )",V,C,martokon@haverford.org
 "Pennington, Henry ( Henry )",V,C,henrpenn@haverford.org
 "Rosenzweig, Ian ( Ian )",V,C,ianrose@haverford.org
-"Stait, Jamie ( Jamie )",V,C,jamistai@haverford.org
 "Ward, Cameron ( Cameron )",V,C,cameward@haverford.org
+"White, Patrick ( Patrick ),V,C,patrwhit@haverford.org"
 "Bartholdson, Anders ( Anders )",VI,C,andebart@haverford.org
 "Bonaparte, Jai ( Jai)",VI,C,jaibona@haverford.org
 "Brosko, Matthew ( Matt )",VI,C,mattbros@haverford.org
@@ -123,14 +125,13 @@ def get_students(period):
 "Murphy, Brody ( Brody )",VI,C,brodmurp@haverford.org
 "Ronon, Gerald ( Tripp )",VI,C,gerarono@haverford.org
 "Rouse, John ( John )",VI,C,johnrous@haverford.org
+"Seward, William ( Henry )",VI,C,willsewa@haverford.org
 "Walker, William ( William )",VI,C,willwalk@haverford.org
 "Watson, Luke ( Luke )",VI,C,lukewats@haverford.org
 "Williams, Casey ( Casey )",VI,C,casewill@haverford.org
 "Yoh, Russell ( Russell )",VI,C,russyoh@haverford.org
 "Zhang, Max ( Max )",VI,C,maxzhan@haverford.org
-"Brodnik, Timothy ( TJ )",IV,D,timobrod@haverford.org
-"Becker, Jacob ( Jacob )",V,D,jacobeck@haverford.org
-"Becker, Leo ( Leo )",V,D,leobeck@haverford.org
+"Jones, Matthew ( Matt )",IV,D,mattjone@haverford.org
 "Bonner, Declan ( Declan )",V,D,declbonn@haverford.org
 "Carpenter, Devin ( Devin )",V,D,devicarp@haverford.org
 "Cloran, Duke ( Duke )",V,D,dukeclor@haverford.org
@@ -139,6 +140,7 @@ def get_students(period):
 "Dalton, Connor ( Connor )",V,D,conndalt@haverford.org
 "Degenhardt, Kai ( Kai )",V,D,kaidege@haverford.org
 "Fertels, Maxwell ( Max )",V,D,maxwfert@haverford.org
+"Gaffney, Thomas ( Mac )",V,D,thomgaff@haverford.org
 "Gord, Charles ( Charlie )",V,D,chargord@haverford.org
 "Haney, Connor ( Connor )",V,D,connhane@haverford.org
 "Haron, Myles ( Myles )",V,D,myleharo@haverford.org
@@ -157,13 +159,14 @@ def get_students(period):
 "Simpkins, Connor ( Connor )",V,D,connsimp@haverford.org
 "Smith, Cameron ( Cameron )",V,D,camesmit@haverford.org
 "Williams, Joshua ( Josh )",V,D,joshwill@haverford.org
-"Campbell-Williams, Colin ( Colin )",V,D,colicamp@haverford.org
 "Yerger, Matthew ( Matthew )",V,D,mattyerg@haverford.org
 "Andrewson, Noah ( Noah )",VI,D,noahandr@haverford.org
+"Bonaparte, Jai ( Jai )",VI,D,jaibona@haverford.org
 "Cuddeback, John ( Jack )",VI,D,johncudd@haverford.org
 "Gillespie, Connor ( Connor )",VI,D,conngill@haverford.org
 "Herbert, Graeme ( Graeme )",VI,D,graeherb@haverford.org
 "Jones, Matthew ( Matty )",VI,D,mattjone@haverford.org
+"Kahana, Nathan ( Nathan )",VI,D,nathkaha@haverford.org
 "Keidel, Philip ( Charlie )",VI,D,philkeid@haverford.org
 "Long, Jackson ( Jack )",VI,D,jacklong@haverford.org
 "O'Kane, Brady ( Brady )",VI,D,brado'ka@haverford.org
@@ -172,14 +175,13 @@ def get_students(period):
 "Stamps, Gavin ( Gavin )",VI,D,gavistam@haverford.org
 "Stewart, David ( David )",VI,D,davistew@haverford.org
 "Vogel, Tanner ( Tanner )",VI,D,tannvoge@haverford.org
-"Winikur, Asa ( Asa )",VI,D,asawini@haverford.org
 "Wu, Preston ( Preston )",VI,D,preswu@haverford.org
 "Bartholdson, Michael ( Michael )",V,E,michbart@haverford.org
 "Brown, Harrison ( Harrison )",V,E,harrbrow@haverford.org
+"Busser, Robert ( Robby )",V,E,robebuss@haverford.org
 "Crowder, Gabriel ( Gabriel )",V,E,gabrcrow@haverford.org
 "Esposito, Cameron ( Cameron )",V,E,cameespo@haverford.org
 "Gaffney, Thomas ( Mac )",V,E,thomgaff@haverford.org
-"Hoilett, McKai (McKai )",V,E,mckahoil@haverford.org
 "Matuch, Alexander ( Xan )",V,E,alexmatu@haverford.org
 "White, Patrick ( Patrick )",V,E,patrwhit@haverford.org
 "Belden, Daniel ( Daniel )",VI,E,danibeld@haverford.org
@@ -201,7 +203,6 @@ def get_students(period):
 "Lee, Ethan ( Ethan )",VI,E,ethalee@haverford.org
 "McCloskey, Nolan ( Nolan )",VI,E,nolamccl@haverford.org
 "Miles, Michael ( Brady )",VI,E,michmile@haverford.org
-"Murphy, Brody ( Brody )",VI,E,brodmurp@haverford.org
 "Nemo, Alexander ( Alex )",VI,E,alexnemo@haverford.org
 "Ngo, Sean ( Sean )",VI,E,seanngo@haverford.org
 "Paul, Blake ( Blake )",VI,E,blakpaul@haverford.org
@@ -211,6 +212,7 @@ def get_students(period):
 "Scanlan, Connor ( Connor )",VI,E,connscan@haverford.org
 "Valentino, Anthony ( Anthony )",VI,E,anthvale@haverford.org
 "Young, Banks ( Banks )",VI,E,bankyoun@haverford.org
+"Brodnik, Timothy ( TJ )",IV,F,timobrod@haverford.org
 "Andrewson, Noah ( Noah )",VI,F,noahandr@haverford.org
 "Bradley, Andrew ( Andrew )",VI,F,andrbrad@haverford.org
 "Brodnik, Sean ( Sean )",VI,F,seanbrod@haverford.org
@@ -235,6 +237,7 @@ def get_students(period):
 "White, Michael ( Ian )",VI,F,michwhit@haverford.org
 "Williams, Casey ( Casey )",VI,F,casewill@haverford.org
 "Wolitarsky, James ( William )",VI,F,jamewoli@haverford.org
+"Harvison, Harvey ( Harvey )",V,G,harvharr@haverford.org
 "Peshek-Percec, Alexander ( Alexander )",VI,G,alexpesh@haverford.org
 "Harvison, Harvey ( Harvey )",V,G,harvharv@haverford.org
 "Reavey, Kevin ( Kevin )",VI,G,kevireav@haverford.org
@@ -246,7 +249,6 @@ def get_students(period):
 "Boratto, Evan ( Evan )",V,G,evanbora@haverford.org
 "Borden, Andrew ( Andrew )",V,G,andrbord@haverford.org
 "Burman, Nathaniel ( Nate )",V,G,nathburm@haverford.org
-"Busser, Robert ( Robby )",V,G,robebuss@haverford.org
 "Covington, Kevin ( Kevin )",V,G,kevicovi@haverford.org
 "Dardarian, Alexander ( Alexander )",V,G,alexdard@haverford.org
 "Dombar, Simon ( Simon )",V,G,simodomb@haverford.org
@@ -279,15 +281,19 @@ def get_students(period):
 "Baker, Dawson ( Dawson )",VI,G,dawsbake@haverford.org
 "Barnes-Pace, Michael ( Mick )",VI,G,michbarn@haverford.org
 "Brewington, Ryan ( Ryan )",VI,G,ryanbrew@haverford.org
+"Brodnik, Sean ( Sean )",VI,G,seanbrod@haverford.org
 "Carter, Anthony ( Anthony )",VI,G,anthcart@haverford.org
 "Colsher, Ryan ( Ryan )",VI,G,ryancols@haverford.org
-"Forte, Jackson ( Jackson )",VI,G,jackfort@haverford.org
 "Gates, James ( James )",VI,G,jamegate@haverford.org
 "Hengst, Austan ( Austan )",VI,G,austheng@haverford.org
 "Jacobs, Keegan ( Keegan )",VI,G,keegjaco@haverford.org
 "Laveran, Pierce ( Pierce )",VI,G,pierlave@haverford.org
+"Marr, Maximillian ( Max )",VI,G,maximarr@haverford.org
 "Mignucci, Nicholas ( Nicholas )",VI,G,nichmign@haverford.org
 "Nayak, Adiyan ( Adi )",VI,G,adiynaya@haverford.org
+"Nolen, Connor ( Connor )",VI,G,connnole@haverford.org
+"Winikur, Asa ( Asa )",VI,G,asawini@haverford.org
+"Wolitarsky, James ( William )",VI,G,jamewoli@haverford.org
 "Newhall, Henry ( Henry )",VI,G,henrnewh@haverford.org"""
 
     # creating a csv reader object from the multi-line string
