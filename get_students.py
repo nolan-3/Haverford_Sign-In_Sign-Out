@@ -46,7 +46,7 @@ def get_students(period):
 "Wai, Ryan ( Ryan )",V,A,ryanwai@haverford.org
 "Wang, Simon ( Simon )",V,A,simowang@haverford.org
 "Wiegand, Mason ( Mason )",V,A,masowieg@haverford.org
-"Campbell-Williams, Colin ( Colin )",V,colicamp@haverford.org
+"Campbell-Williams, Colin ( Colin )",V,A,colicamp@haverford.org
 "Brosko, Matthew ( Matt )",VI,A,mattbros@haverford.org
 "Conklin, Mitchell ( Tate )",VI,A,mitcconk@haverford.org
 "Cuddeback, John ( Jack )",VI,A,johncudd@haverford.org
@@ -110,7 +110,7 @@ def get_students(period):
 "Pennington, Henry ( Henry )",V,C,henrpenn@haverford.org
 "Rosenzweig, Ian ( Ian )",V,C,ianrose@haverford.org
 "Ward, Cameron ( Cameron )",V,C,cameward@haverford.org
-"White, Patrick ( Patrick ),V,C,patrwhit@haverford.org"
+"White, Patrick ( Patrick )",V,C,patrwhit@haverford.org
 "Bartholdson, Anders ( Anders )",VI,C,andebart@haverford.org
 "Bonaparte, Jai ( Jai)",VI,C,jaibona@haverford.org
 "Brosko, Matthew ( Matt )",VI,C,mattbros@haverford.org
@@ -308,6 +308,7 @@ def get_students(period):
         grade = row[GRADE_INDEX]
         name = row[NAME_INDEX]
         email = row[EMAIL_INDEX]
+        
 
         students[name] = {"signed_in": True, "checked_out": False, "checked_in": False, "grade": grade, "email": email}
     csvreader = csv.reader(csv_data.split('\n'))
