@@ -201,7 +201,6 @@ def get_students(period):
 "Kriebel, Garrett ( Garrett )",VI,E,garrkrie@haverford.org
 "Lawrence, Peter ( Finn )",VI,E,petelawr@haverford.org
 "Lee, Ethan ( Ethan )",VI,E,ethalee@haverford.org
-"McCloskey, Nolan ( Nolan )",VI,E,nolamccl@haverford.org
 "Miles, Michael ( Brady )",VI,E,michmile@haverford.org
 "Nemo, Alexander ( Alex )",VI,E,alexnemo@haverford.org
 "Ngo, Sean ( Sean )",VI,E,seanngo@haverford.org
